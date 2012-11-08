@@ -1,0 +1,93 @@
+﻿/*css reset*/
+body,h1,h2,h3,h4,ul,ol,li,p,form,dl,dt,dd,td,th,table{border:none;margin:0;padding:0;list-style:none}
+body,h1,h2,h3,h4,ul,ol,li,p,small,label,input{font-size:12px;line-height:1.6;font-family:arial,"宋体";color:#323232;}
+input,select,button {line-height:1.5}
+table {border-collapse:collapse;}
+a:link,a:visited,a:hover,a:active{text-decoration:none;outline:none;color:#206EA2}
+a:hover {text-decoration:underline;}
+em{font-style:normal}
+img,fieldset{border:none}
+.clear{clear:both}
+.clearfix:after{content:".";height:0;display:block;visibility:hidden;clear:both} 
+.clearfix{-height:1%;*min-height:1%}
+
+/*布局样式*/
+.common_cloms {clear:both;width:960px;margin:0 auto;}
+.common_cloms_mod {float:left;}
+.common_cloms_mod_drag{border:1px solid #e6e6e6;}
+.common_w_big {width:940px;}
+.common_w_middle {width:620px;}
+.common_w_small {width:310px;}
+.common_cloms_clear {clear:both;font-size:0;}
+
+/*相册ablum*/
+.common_ablums { margin:0 15px 20px;}
+.common_w_big .common_ablums {height:335px;width:915px;background:url(mod/ablum_b.jpg) no-repeat 0 0;}
+.common_w_middle .common_ablums {height:485px;width:580px;background:url(mod/ablum_m.jpg) no-repeat 0 0;}
+.common_w_small .common_ablums {height:260px;width:250px;background:url(mod/ablum_s.jpg) no-repeat 0 0;}
+
+/*news list*/
+.common_newslist {margin:0 20px 20px 20px;overflow:hidden;}
+.common_newslist li {clear:both;border-top:1px dotted #d7d7d7;padding:10px 0;margin:-1px 0 1px;}
+.common_newslist li a {color:#323232;}
+.common_newslist span {float:left; font-family:"宋体"}
+.common_newslist small,.common_newslist strong{float:right;color:#4db1c9;font-size:10px;}
+.common_newslist strong {font-weight:400}
+.common_newslist em {float:left;background:#cd0000; padding:0 4px;color:#fff; margin-right:5px; height:16px;}
+
+/*图片列表*/
+.common_pics_item {float:left;text-align:center; margin:0 0 10px 10px;}
+.common_pics_item img {display:block;}
+
+/*列表数据*/
+.common_datalist {width:100%;}
+.common_datalist th{ font-weight:400}
+.common_datalist th,.common_datalist td{ padding:3px;}
+
+/*贴图版*/
+.common_cloms_mod_Other { text-align:center;}
+.common_cloms_mod_Other textarea{border:1px solid #e6e6e6;width:280px;height:210px;margin:0 10px 10px; display:block;}
+.common_w_big .common_cloms_mod_Other textarea {width:910px;}
+.common_w_middle .common_cloms_mod_Other textarea {width:590px;}
+.common_cloms_mod_Other_save,.common_cloms_mod_Other_prev { background:#7ea7d3;color:#fff;border:1px solid #9fc6e5; padding:3px 10px; cursor:pointer;}
+.common_cloms_mod_Other_prev{background:#e0f2ff;border-color:#e6e6e6;color:#000; margin:5px 8px 0;}
+.common_cloms_mod_Other .clear { height:15px;}
+
+/*top 1*/
+.common_newslist_top1 {margin-left:10px;}
+.common_newslist_top1 strong {display:block;font-size:14px;}
+.common_newslist_top1 img{clear:both;float:left;margin:5px 10px 10px 0;}
+.common_newslist_top1 span {margin-left:1em; font-family:"宋体"}
+
+/*搜索*/
+.common_search input,.common_search select {float:left;}
+.common_search .keyword{width:220px;height:18px;}
+.common_search .options{height:24px;margin-left:5px;}
+.common_search input.submit {width:60px;height:23px;background:url(http://xfiles.cdnmyspace.cn/dir/vi/v1/img/viButtonv2.gif) repeat-x 0 -409px;padding-bottom:3px;margin-left:5px;border:1px solid #333;text-align:center;cursor:pointer;color:#fff;font-weight:700;}
+
+/*用户*/
+.common_users {float:left;margin:0 0 10px 10px;}
+.common_users img{border:1px solid #ccc; padding:2px;}
+.common_users ul {padding-left:10px;}
+
+/*微博客mblog*/
+.common_mblog { margin:0 10px 10px 10px;}
+.common_mblog_master{border:1px solid #ccc;padding:3px;float:left;}
+.common_mblog_master img {width:40px;height:40px;float:left;}
+.common_mblog_main {margin-left:60px;}
+.common_mblog_main img { display:block;margin:5px;}
+.common_mblog_operators { clear:both; text-align:right;}
+
+.common_mblog_item { margin:0 10px 10px 10px;}
+.user_name { font-weight:700;}
+
+.common_singer{ float:left; margin:0 -10px 15px 20px;}
+.common_singer img {width:80px;height:80px; border:1px solid #ccc; padding:10px;}
+.li_name,.li_num{ display:block; text-align:center;}
+
+/*footer*/
+.common_footer{border-top:1px solid #E5E5E5;width:900px; padding:20px 30px; text-align:center}
+.common_footer p {padding-top:10px;}
+.common_footer_link {letter-spacing:5px;}
+.common_footer_link a {letter-spacing:0;}
+.miibeian {margin-left:2em; background:url(http://xfiles.myspace.cn/dir/vi/biaoshi.gif) no-repeat 100% 0; padding:20px 40px 20px 0;}

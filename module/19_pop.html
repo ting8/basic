@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style/common/reset.css" />
+<link rel="stylesheet" type="text/css" href="style/component/pop/pop.css" />
+<title>弹出框</title>
+</head>
+<body>
+
+<body>
+	<a href="#" style="background:#ccc; float:left;" onclick="popClick1_1(this)">相对定位</a>
+	<a href="#" style="background:#ccc; float:left;clear:both; margin-top:50px;" onclick="popClick1_2(this)">相对定位2</a>
+
+	<a href="#" style="background:#ccc; float:left;clear:both; margin-top:50px;" onclick="popClick2_1()">绝对居中</a>
+	<a href="#" style="background:#ccc; float:left;clear:both; margin-top:50px;" onclick="popClick2_2()">绝对居中2</a>
+	
+	
+<script type="text/javascript" src="style/component/pop/pop.js"></script>
+<script type="text/javascript">
+//	width 弹出层宽度，默认为500
+//	height 弹出层高度，默认为auto，但最大高度则为网页可见高度减去下面的diff
+//	mask  是否遮罩，默认为false;
+//	diff ;
+//  position 定位方式，默认为绝对居中，可以介入relative相对定位，但必须通过relObj提供相对的对象
+	function beforeAlert(){
+		alert("关闭之前")
+	}
+	function popClick1_1(obj){
+		var html = '<div class="popHTMl">弹出框的内容1<span id="close1">close</span></div>'
+		var pop1_1 = new PopOutCommon(html,{id:'s1_1',height:'100px',position:'relative',relObj:obj,befClose:beforeAlert});
+		//pop1_1.befClose = beforeAlert;
+		pop1_1.init();
+		var clo = document.getElementById("close1");
+		clo.onclick = function(){pop1_1.PopClose()};
+	}
+	function popClick1_2(obj){
+		var html = '<div class="popHTMl">弹出框的内容2</div>'
+		var pop1_1 = new PopOutCommon(html,{id:'s1_2',height:'100px',position:'relative',relObj:obj});
+		pop1_1.init();
+	}
+	function popClick2_1(){
+		var html = '<div class="popHTMl">弹出框的内容3</div>'
+		var pop1_1 = new PopOutCommon(html);
+		pop1_1.init();
+	}
+	function popClick2_2(){
+		var html = '<div class="popHTMl">弹出框的内容4</div>'
+		var pop1_1 = new PopOutCommon(html,{mask:true});
+		pop1_1.init();
+	}	
+</script>
+</body>
+
+</body>
+</html>

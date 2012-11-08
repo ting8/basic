@@ -1,0 +1,146 @@
+﻿/*css reset*/
+body,h1,h2,h3,h4,ul,ol,li,p,form,dl,dt,dd,td,th,table{border:none;margin:0;padding:0;list-style:none}
+body,h1,h2,h3,h4,ul,ol,li,p,small,label,input{font-size:12px;line-height:1.6;font-family:arial,"宋体";color:#666;}
+input,select,button {line-height:1.5}
+table {border-collapse:collapse;}
+a:link,a:visited,a:hover,a:active{text-decoration:none;outline:none;color:#206EA2}
+a:hover {text-decoration:underline;}
+em{font-style:normal}
+img,fieldset{border:none}
+.clear{clear:both}
+.clearfix:after{content:".";height:0;display:block;visibility:hidden;clear:both} 
+.clearfix{-height:1%;*min-height:1%}
+
+/*布局样式*/
+.common_cloms {clear:both;width:960px;margin:0 auto;}
+.common_cloms_full,.common_cloms {margin-bottom:15px;}
+.common_cloms_mod {float:left; margin-right:15px;}
+.common_cloms_mod_r {float:right; margin-right:0;}
+.common_w960 {width:960px;}
+.common_w765 {width:765px;}
+.common_w745 {width:745px;}
+.common_w725 {width:725px;}
+.common_w705 {width:705px;}
+.common_w685 {width:685px;}
+.common_w645 {width:645px;}
+.common_w540 {width:540px;}
+.common_w472 {width:472px;}
+.common_w330 {width:330px;}
+.common_w300 {width:300px;}
+.common_w310 {width:310px;}
+.common_w260 {width:260px;}
+.common_w240 {width:240px;}
+.common_w220 {width:220px;}
+.common_w210 {width:210px;}
+.common_w200 {width:200px;}
+.common_w190 {width:190px;}
+.common_w180 {width:180px;}
+.common_w170 {width:170px;}
+.common_w150 {width:150px;}
+.common_w130 {width:130px;}
+.common_w090 {width:90px;}
+.common_cloms_clear {clear:both; font-size:0;}
+
+/*hx标题系列*/
+.common_hx {height:25px;padding:0 10px;background:#f4f4f4;border:1px solid #ccc; margin-bottom:10px;}
+.common_hx h1,.common_hx h2,.common_hx h3 {float:left; line-height:25px;}
+.common_hx a {line-height:25px;}
+.common_hx_more {float:right; font-family:"宋体"}
+
+/*top 1*/
+.common_newslist_top1 {margin-left:10px;}
+.common_newslist_top1 strong {display:block;font-size:14px;}
+.common_newslist_top1 img{clear:both;float:left;margin:5px 10px 10px 0;}
+.common_newslist_top1 span {margin-left:1em; font-family:"宋体"}
+
+/*news list*/
+.common_newslist {margin:0 0 10px 10px;}
+.common_newslist li {clear:both}
+.common_newslist span {float:left; font-family:"宋体"}
+.common_newslist small,.common_newslist strong{float:right;color:#666;}
+.common_newslist strong {font-weight:400}
+.common_newslist em {float:left;background:#cd0000; padding:0 4px;color:#fff; margin-right:5px; height:16px;}
+
+/*图片列表*/
+.common_pics_item {float:left;text-align:center; margin:0 0 10px 10px;}
+.common_pics_item img {display:block;}
+
+/*列表数据*/
+.common_datalist {width:100%;}
+.common_datalist th{ font-weight:400}
+.common_datalist th,.common_datalist td{ padding:3px;}
+
+/*搜索*/
+.common_search input,.common_search select {float:left;}
+.common_search .keyword{width:220px;height:18px;}
+.common_search .options{height:24px;margin-left:5px;}
+.common_search input.submit {width:60px;height:23px;background:url(http://xfiles.cdnmyspace.cn/dir/vi/v1/img/viButtonv2.gif) repeat-x 0 -409px;padding-bottom:3px;margin-left:5px;border:1px solid #333;text-align:center;cursor:pointer;color:#fff;font-weight:700;}
+
+/*登录*/
+.common_login label{margin-right:5px;}
+.common_login li{padding-bottom:8px;}
+.common_login input.text {width:120px;}
+.common_login input.submit {height:23px;background:url(http://xfiles.cdnmyspace.cn/dir/vi/v1/img/viButtonv2.gif) repeat-x 0 -409px;padding-bottom:3px;margin-left:5px;border:1px solid #333;text-align:center;cursor:pointer;color:#fff;font-weight:700;}
+a.common_reg {display:block;height:21px;background:url(http://xfiles.cdnmyspace.cn/dir/vi/v1/img/viButtonv2.gif) repeat-x 0 -145px;border:1px solid #ffaa34;text-align:center;color:#fff;font-weight:700;line-height:21px;}
+a.common_reg:hover {background-position:0 -216px;}
+.common_login_btns {padding-left:25px;}
+.common_login_btns input,.common_login_btns a{width:50px;float:left;}
+.common_login_btns a {margin-left:5px;}
+
+.common_login_vertical {width:220px;}
+.common_login_vertical ul{float:left;}
+.common_login_vertical input.text {height:18px;}
+.common_login_vertical .common_login_btns {float:right;width:60px;padding:0;}
+.common_login_vertical .common_login_btns a {margin:8px 0 0 5px;}
+
+/*用户*/
+.common_users {float:left;margin:0 0 10px 10px;}
+.common_users img{border:1px solid #ccc; padding:2px;}
+.common_users ul {padding-left:10px;}
+
+/*标签*/
+.common_tags_list a{margin-right:15px; line-height:24px;}
+.common_tags_class a {line-height:30px;}
+.common_tags_class .tags_class_01 {font-weight:700;}
+.common_tags_class .tags_class_02 {font-size:14px;font-weight:700}
+.common_tags_class .tags_class_03 {font-size:16px;font-weight:700}
+.common_tags_class .tags_class_04 {font-size:18px;font-weight:700}
+.common_tags_class .tags_class_05 {font-size:20px;font-weight:700}
+.common_tags_class .tags_class_06 {font-size:24px;font-weight:700}
+
+/*footer*/
+.common_footer{border-top:1px solid #E5E5E5;width:900px; padding:20px 30px; text-align:center}
+.common_footer p {padding-top:10px;}
+.common_footer_link {letter-spacing:5px;}
+.common_footer_link a {letter-spacing:0;}
+.miibeian {margin-left:2em; background:url(http://xfiles.myspace.cn/dir/vi/biaoshi.gif) no-repeat 100% 0; padding:20px 40px 20px 0;}
+
+/*收藏到*/
+.common_collect label {float:left;margin-right:12px}
+.common_collect a{width:16px;height:15px;display:block;overflow:hidden;float:left;margin:2px 8px 0 0;background:url(http://xfiles.cdnmyspace.cn/dir/music/profile/images/outpush.png) no-repeat 50px 0;line-height:50px;}
+.common_collect a.renren{background-position:0px -672px;}
+.common_collect a.kaixin001{background-position:0px -161px;}
+.common_collect a.qq{background-position:0px -96px;}
+.common_collect a.baidu{background-position:0px -80px;}
+.common_collect a.douban{background-position:0px -480px;}
+.common_collect a.twitter{background-position:0px -240px;}
+.common_collect a.delicious{background-position:0px -192px;}
+.common_collect a.sina{background-position:0px -641px;}
+
+
+/*common_indicator*/
+.common_indicator a{background:url(http://xfiles.cdnmyspace.cn/dir/userhome/v2/img/tip_icon_1.gif) no-repeat 0 60px;padding-left:18px;}
+.common_indicator a.msg{background-position:-2px 1px;}
+.common_indicator a.friend{background-position:-2px -21px;}
+.common_indicator a.album{background-position:-2px -41px;}
+.common_indicator a.blog_comment{background-position:-2px -41px;}
+.common_indicator a.cnNewInf{background-position:-2px -41px;}
+.common_indicator a.cnFriDeSuccess{background-position:-2px -41px;}
+.common_indicator a.mblog{background-position:-2px -41px;}
+.common_indicator a.space{background-position:-2px -41px;}
+.common_indicator a.cnMonthBir{background-position:-2px -60px}
+.common_indicator a.blog_subscribe{background-position:-2px -80px;}
+.common_indicator a.cnNewActivity{background-position:-2px -99px}
+.common_indicator a.notify{background-position:-2px -120px;}
+.common_indicator a.viewDaily{background-position:-2px -164px;}
+.common_indicator a.birthdays{background:url(http://xfiles.cdnmyspace.cn/dir/userhome/v4/img/ico_birth.gif) no-repeat -3px -3px;}

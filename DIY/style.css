@@ -1,0 +1,28 @@
+﻿.slider{text-align:center;font-size:34px;font-weight:900;color:#ffffff;width:100%;background-color:#C3D9FF;overflow:hidden}		/**占位层**/
+.empty{border:4px dashed #EEEEEE;}
+
+.common_cloms_btm{clear:both;width:100%;height:40px;background:url(mod/btm.jpg) no-repeat center -20px; line-height:40px; text-align:center; margin-bottom:10px; cursor:pointer}
+.highspan{clear:both;height:10px;}
+
+body { background:#d4dddc url(images/bg.jpg) no-repeat center 0;}
+.common_wrap { background:#fff;width:960px; margin:0 auto;}
+.common_header { background:#1a448c url(images/bghd.jpg) repeat-x 0 0;height:39px; margin-bottom:20px;color:#fff; text-align:center; line-height:39px;}
+
+.common_cloms_del {float:right;width:40px;color:#fff;background:#f00;cursor:pointer;text-align:center;line-height:30px;margin-bottom:10px;}
+#emptyWrap {position:fixed;right:0;top:50%;color:#fff;background:#f00;padding:5px 10px;cursor:pointer;}
+
+.common_hx {background:#f4f4f4 url(images/bghx.jpg) no-repeat 0 0;height:45px; margin-bottom:15px;}
+.common_hx h2 {line-height:49px;padding-left:35px; font-size:16px; font-family:微软雅黑; text-align:left;}
+.common_hx a.common_hx_more { display:none}
+.common_hx span { float:right; margin:-35px 15px 0 0; cursor:pointer;}
+
+.common_cloms_mod { background:#fff;}
+.common_wrap .common_cloms_mod {min-height:100px; margin-left:10px;}
+.green_list .common_newslist_top1 {float:left;width:450px;margin:10px;}
+
+.addnewmod {position:relative; margin:20px 0;}
+.AddNewModBtn{display:block;cursor:pointer; background:url(mod/add.jpg) no-repeat center 0;height:80px; overflow:hidden; line-height:200px;}
+.common_grids {border:4px solid #ccc;width:302px;position:absolute;left:50%;margin-left:-150px;bottom:0;padding-top:5px;background:#fff;display:none;}
+
+.AllMod {position:absolute;border:1px solid #d6d6d6;padding:5px;width:200px; background:#f5f5f5;}
+.AllMod span { display:block; width:100px; float:left; cursor:pointer;}
