@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css.css" rel="stylesheet" type="text/css" />
+<script src="../basic.js"></script>
+<title>Email输入格式验证</title>
+<style>
+#email {padding:2px;width:300px;margin-left:5px;}
+.data {width:510px;margin:10px 0;}
+.data th {width:70px;}
+</style>
+</head>
+
+<body>
+
+<div id="content" class="content">
+	Email: <input type="text" id="email" lang="0" />
+</div>
+
+
+<table class="data">
+  <tr>
+    <th>设备</th>
+    <td>计算机</td>
+  </tr>
+  <tr>
+    <th>浏览器</th>
+    <td>IE6+ chrome firefox</td>
+  </tr>
+  <tr>
+    <th>输入设备</th>
+    <td>鼠标 键盘</td>
+  </tr>
+  <tr>
+    <th>错误类型</th>
+    <td>1：输入非法字符<br />
+      2：邮箱格式不正确
+    </td>
+  </tr>
+  <tr>
+    <th>错误提示</th>
+    <td>
+    	1：输入框加红框，无文字提示<br />
+    	2：不做输入限制，用户自行修改
+    </td>
+  </tr>
+</table>
+
+
+<table class="data">
+	<thead>
+  <tr>
+    <th></th>
+    <td>无动作</td>
+    <td>粘贴</td>
+    <td>输入</td>
+    <td>离开</td>
+  </tr>
+</thead>
+  <tr>
+    <th>激活</th>
+    <td>--</td>
+    <td>01 -- </td>
+    <td>05 -- </td>
+    <td>09 -- </td>
+  </tr>
+  <tr>
+    <th>粘贴</th>
+    <td>--</td>
+    <td>02 验证格式</td>
+    <td>06 -- </td>
+    <td>10 -- </td>
+  </tr>
+  <tr>
+    <th>输入</th>
+    <td>--</td>
+    <td>03 -- </td>
+    <td>07 验证非法字符</td>
+    <td>11 -- </td>
+  </tr>
+  <tr>
+    <th>离开</th>
+    <td>--</td>
+    <td>04 -- </td>
+    <td>08 验证格式</td>
+    <td>12 验证格式</td>
+  </tr>
+  <tr>
+    <th>备注</th>
+    <td colspan="4">
+    	1：中文输入会造成输入动作发生时值未必变化的情况<br />
+    	2：离开时如果用户没有输入任何信息，则不验证
+    </td>
+  </tr>
+</table>
+
+<textarea id="jsCode">
+function isEmail (str) {
+	return (str.search(/^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/) > -1);
+}
+function isLegal (str) {
+	return (str.search(/[\W]/g)>-1);
+}
+var obj = document.getElementById("email");
+obj.onfoucs = function(){
+	this.style.border = "1px solid #ccc"
+}
+obj.onkeyup = function(){
+	if(obj.value !== ""){
+		obj.lang = 1;
+	}
+	obj.value = obj.value.toLowerCase(); 
+	if(!isLegal(obj.value)){
+  	obj.style.border = "1px solid #cd0000";
+  }else{
+  	obj.style.border = "1px solid #ccc";
+  }
+}
+obj.onpaste = function(){
+  if(!isEmail(obj.value)){
+  	obj.style.border = "1px solid #cd0000";
+  }else{
+  	obj.style.border = "1px solid #ccc";
+  }
+}
+obj.onblur = function(){
+	if(obj.lang == 0){return false;}
+  if(!isEmail(obj.value)){
+  	obj.style.border = "1px solid #cd0000";
+  }else{
+  	obj.style.border = "1px solid #ccc";
+  }
+}
+</textarea>
+<input type="submit" value="execute" onclick="run()" />
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css.css" rel="stylesheet" type="text/css" />
+<script src="basic.js"></script>
+<title>get post</title>
+</head>
+
+<body>
+
+<pre>
+&lt;form action=&quot;url&quot; method=&quot;get/post&quot;&gt;
+&lt;/form&gt;
+</pre>	
+<h2>get</h2>
+<p>get是把参数数据队列加到提交表单的ACTION属性所指的URL中，值和表单内各个字段一一对应，在URL中可以看到。<br />
+	对于get方式，服务器端用<em>ASP Request.QueryString</em>获取变量的值<br />
+（不安全，长度受限）	
+</p>
+	
+<h2>post</h2>	
+<p>
+post是通过HTTP post机制，将表单内各个字段与其内容放置在HTML HEADER内一起传送到ACTION属性所指的URL地址。用户看不到这个过程。	<br />
+对于post方式，服务器端用<em>ASP Request.Form</em>获取提交的数据。
+</p>
+
+<h2>触发get请求的方式</h2>	
+<pre>
+&lt;img src="<em>url</em>" &gt;
+&lt;iframe src=&quot;<em>url</em>&quot;&gt;
+&lt;embed src=&quot;<em>url</em>&quot;&gt;
+其他可以嵌入url的标签
+</pre>
+<br /><h2>结论（数据接口设计）</h2>
+<p>
+1：get方式应应用于只读接口<br />
+2：post则可以应用于读写接口
+</p>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>好友选择</title>
+<style type="text/css"> 
+* {margin:0;padding:0;list-style:none;}
+.clear { clear:both; height:0;overflow:hidden;}
+table { border-collapse:collapse;}
+ 
+.hePopOutDiv { float:left;}
+.cmn_pop_out {font-size:0;}
+.cmn_pop_out_content { font-family:Arial,宋体;font-size:12px;width:50px;height:50px; background:#ececec;border:1px solid #cecece;}
+.cmn_pop_out_lt { background:url(images/pop_corner.png) no-repeat 0 0;_background:url(images/pop_corner.gif) no-repeat 0 0;width:10px;height:10px;}
+.cmn_pop_out_rt { background:url(images/pop_corner.png) no-repeat -10px 0;_background:url(images/pop_corner.gif) no-repeat -10px 0;width:10px;}
+.cmn_pop_out_rb { background:url(images/pop_corner.png) no-repeat -10px -10px;_background:url(images/pop_corner.gif) no-repeat -10px -10px;height:10px;}
+.cmn_pop_out_lb { background:url(images/pop_corner.png) no-repeat 0 -10px;_background:url(images/pop_corner.gif) no-repeat 0 -10px;}
+.cmn_pop_out_bg { background:url(images/pop_bg.png);_background:url(images/pop_bg.gif)}
+
+.hePopOutHead {padding:5px 10px;border-bottom:1px solid #cecece; background:#fff;}
+.hePopOutHead h2 { font-size:12px;}
+.hePopOutHead span,.heClearKeywords{display:block;background:url(images/close.png) no-repeat 0 0;width:9px;height:10px; overflow:hidden; line-height:50px; cursor:pointer}
+.hePopOutHead span{float:right; margin:-12px 0 0 0;}
+.hePopOutHead span:hover {background-position:-9px 0;}
+.hePopOutSearch{padding:10px;height:30px;border-bottom:1px solid #cecece; background:#f8f8f8;}
+.hePopOutSearch label { float:left;color:#7378b0;line-height:25px;margin-right:5px;}
+.hePopOutSearch input { float:left;height:19px;padding:4px 25px 4px 20px;width:220px;border:1px solid #7378b0; background:#fff url(images/search.png) no-repeat 4px 8px;}
+.heClearKeywords { margin:9px 0 0 -15px; position:relative;}
+.hePopOutTab {float:right; margin:-20px 15px 0 0;}
+.hePopOutTab span { padding:5px 15px; cursor:pointer}
+.hePopOutTabOn {background:#fff;border:1px solid #cecece;border-bottom:0;font-weight:700}
+.hePopOutList {overflow:auto;border-bottom:1px solid #cecece;background:#fff;padding:10px;}
+.hePopOutPanel {padding:10px;min-height:20px;}
+.heInviteBtn {background:#536da6; padding:5px 15px;color:#fff; font-weight:700;border-radius:3px; cursor:pointer}
+.heQuit { float:left;}
+.heSendMsg { float:right}
+
+.hePopOutListItem { float:left;width:126px;height:56px;padding:3px;overflow:hidden; margin:0 5px 5px 0;border:1px solid #fff;}
+.hePopOutListItem:hover {border:1px solid #cdd4e7; background:#e7ebf6}
+.hePopOutListItem img {width:50px;height:50px;padding:2px;border:1px solid #536da6;float:left;margin-right:5px;}
+.hePopOutListItem em { font-style:normal; background:#ccc;color:#cd0000;}
+</style> 
+</head>
+
+<body>
+
+<a href="#" style="float:left;margin:50px;padding:5px 10px; background:#f5f5f5;border:1px solid #d6d6d6;" onclick="inviteFris();">邀请好友</a>
+
+<script>
+var heFunc = {
+	"get" : function(id){return document.getElementById(id);},
+	"show" : function(obj){obj.style.display = "block";},
+	"hide" : function(obj){obj.style.display = "none";},
+	"addClass" : function(obj,_class) {if(obj.className.indexOf(_class)<0){obj.className += " " + _class;}},
+	"removeClass" : function(obj,_class) {obj.className = obj.className.replace(_class);}
+}
+inviteFris();
+function loadFriendsInfo(){
+	var data = [
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/4/c_301f7734bc2db104d38d1fa8c3828363.jpg","name":"子淇"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/3/c_5a470bd137d3150d944e82ca7097691a.jpg","name":"Quan and Gry"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/3/c_b3ab361bddcf943b31d7c1f17a910dd8.jpg","name":"kir"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/3/c_e6c131982ffd31e79d381a2bc9daeedb.jpg","name":"张静"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/4/c_abd6e1625ec5b30e01f6c3ad1387b0fa.jpg","name":"嗨_施助学"},
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/4/c_b5e059ef996914e0da41f11b6d2ce732.jpg","name":"小南"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/3/c_c3a520540fece6e28e801f6c18708048.jpg","name":"王蒙"},
+{"url":"http://x.myspace.cn/images/no_pic.gif","name":"张寒"},
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/3/c_3be2e80b05091192dfb0398da8880a6d.jpg","name":"龙笛RON_KORB"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/3/c_0812e3ba3a96dce4f3372e798e3d556d.jpg","name":"快乐至尊"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/3/c_35f81ada730f1845897adbb437a605bd.jpg","name":"代兴漫"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/1/c_018a5ef319a7157fb7def6788612eb58.jpg","name":"就够"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/4/c_c37e70b53ef444e61aa6a6be7ae70ab8.jpg","name":"王小曼"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/4/c_738bfa3e92fff9a1b9358bb8ca6a4554.jpg","name":"zjd59dao"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/3/c_a941f6e493b43790a445ca15a5f26b3a.jpg","name":"黄思颖"},
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/3/c_595f5d775156de0619999be336fbd8f0.jpg","name":"吸血鬼"},
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/3/c_f311327324437155be734d1ae29f908a.jpg","name":"拉手网"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/3/c_4b999e3dd2a8bd581a45479892d665c0.jpg","name":"云团@隐身人@王志心@王天龙"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/3/c_32ab31acb60d5d9fe17ce51e7d1d313d.jpg","name":"徐静萍"},
+{"url":"http://b1.ac-images.cdnmyspace.cn/cnimages01/4/c_a3d79023f9ee628a47e146fa9697a469.jpg","name":"中票在线"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/3/c_1e017e3d65a89be0816b6bbf078e94c8.jpg","name":"zhang3"},
+{"url":"http://b1.ac-images.cdnmyspace.cn/cnimages01/4/c_77fa2acb9382e2eb2c7ba2b373b909c2.jpg","name":"可视电话"},
+{"url":"http://x.myspace.cn/images/no_pic.gif","name":"fengziyilang"},
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/4/c_b0b5da7b9d5832d6f817206d320248ac.jpg","name":"深谷幽蓝"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/4/c_bb994c91cced56315ab2cc4f0dd551eb.jpg","name":"蘑菇掌门"},
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/3/c_5a49ffe0edff2fda77bb156fb0270342.jpg","name":"泡泡糖"},
+{"url":"http://x.myspace.cn/images/no_pic.gif","name":"赵华"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/2/c_8896e5250c4a9942b7baffdb6fecf61c.jpg","name":"贺非儿"},
+{"url":"http://b1.ac-images.cdnmyspace.cn/cnimages01/4/c_0d5ece2717490ecaccaca3e639820caa.jpg","name":"欣亚"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/2/c_a3f8bef178bf1b6869fba4fbec712bcc.jpg","name":"雪宫主"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/4/c_e6d314350ed3ceac0df71936d1de4f4e.jpg","name":"刘海锋"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/3/c_4e7b23b95d93175f4005b61a79837b18.jpg","name":"辛唐米娜"},
+{"url":"http://x.myspace.cn/images/no_pic.gif","name":"paltalk"},
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/1/c_253bb38f380d4b201ec7d48de93665d6.jpg","name":"Feyond"},
+{"url":"http://b1.ac-images.cdnmyspace.cn/cnimages01/4/c_567e6f300b45913035284cce547f41c3.jpg","name":"海霞"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/3/c_a76e7811aa72d8e76bd29c9fa306211c.jpg","name":"woody"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/4/c_b4ac263163da73c8a64fef452c042024.jpg","name":"jason"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/1/c_1914365df8659fd2cd1a1f3666359865.jpg","name":"chen weihong"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/4/c_b96b5d5aa4d0e95f056fcd0345d03454.jpg","name":"黄心梦"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/2/c_96a3a186b917459ef0989c3b047b0066.jpg","name":"微笑女人"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/1/c_85c6c3bf3730fa819d4c360e0dd13563.jpg","name":"Kanye 欣"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/4/c_1b3bbd089ecdf7fe623e31ea38557221.jpg","name":"青岛艾灸"},
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/3/c_0e602466fd5d02c990d9dcba752d3a73.jpg","name":"冬瓜"},
+{"url":"http://b1.ac-images.cdnmyspace.cn/cnimages01/4/c_481622496ddfd998760a9a29f421a51d.jpg","name":"钟月婵"},
+{"url":"http://b1.ac-images.cdnmyspace.cn/cnimages01/3/c_2d0f0c02d61ea0bc3637fd280f99c600.jpg","name":"常想一二"},
+{"url":"http://x.myspace.cn/images/no_pic.gif","name":"林家驹"},
+{"url":"http://x.myspace.cn/images/no_pic.gif","name":"容易被忽视"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/3/c_b60139dd10d493922877d330e8bd05f8.jpg","name":"hanbingjing"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/4/c_c4b3f184b46663f5d905efa1b9a8a7c4.jpg","name":"真情"},
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/3/c_160e10c02df2398ac6ddf48e7b6e2663.jpg","name":"金刚柱子"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/3/c_be008988a94cc60e32557377ee2d8d66.jpg","name":"乐堂录音棚"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/4/c_619d132ac2e3e698a8c3f0d6a8a6eace.jpg","name":"太空狗长名字长名字长名字可以更长的吗_是的_还可以阿斯利康阿达放假啦阿达放假啦爱"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/4/c_24f2c5c9323fd6c200966e1695cdc50d.jpg","name":"威威不悔者"},
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/4/c_aef6b0e84bcd2adfe93eb677fcdf0ae4.jpg","name":"jinny"}
+]
+	return data;
+}
+function inviteFris(){
+	inviteFrisPop({left:50,top:79,width:600});
+	var obj = heFunc.get("hePopOutList");
+	var key = 'Q';
+	obj.innerHTML = createFriendsList(loadFriendsInfo(),key);
+
+	var input = heFunc.get("heKeywords");
+	input.onkeyup = function(){
+		var key = this.value.toLowerCase();	
+		//loadJosnP(url,callback);
+		function callback(){
+			var data = [
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/4/c_b0b5da7b9d5832d6f817206d320248ac.jpg","name":"深谷幽蓝"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/4/c_bb994c91cced56315ab2cc4f0dd551eb.jpg","name":"蘑菇掌门"},
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/3/c_5a49ffe0edff2fda77bb156fb0270342.jpg","name":"泡泡糖"},
+{"url":"http://x.myspace.cn/images/no_pic.gif","name":"赵华"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/2/c_8896e5250c4a9942b7baffdb6fecf61c.jpg","name":"贺非儿"},
+{"url":"http://b1.ac-images.cdnmyspace.cn/cnimages01/4/c_0d5ece2717490ecaccaca3e639820caa.jpg","name":"欣亚"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/2/c_a3f8bef178bf1b6869fba4fbec712bcc.jpg","name":"雪宫主"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/4/c_e6d314350ed3ceac0df71936d1de4f4e.jpg","name":"刘海锋"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/3/c_4e7b23b95d93175f4005b61a79837b18.jpg","name":"辛唐米娜"},
+{"url":"http://x.myspace.cn/images/no_pic.gif","name":"paltalk"},
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/1/c_253bb38f380d4b201ec7d48de93665d6.jpg","name":"Feyond"},
+{"url":"http://b1.ac-images.cdnmyspace.cn/cnimages01/4/c_567e6f300b45913035284cce547f41c3.jpg","name":"海霞"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/3/c_a76e7811aa72d8e76bd29c9fa306211c.jpg","name":"woody"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/4/c_b4ac263163da73c8a64fef452c042024.jpg","name":"jason"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/1/c_1914365df8659fd2cd1a1f3666359865.jpg","name":"chen weihong"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/4/c_b96b5d5aa4d0e95f056fcd0345d03454.jpg","name":"黄心梦"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/2/c_96a3a186b917459ef0989c3b047b0066.jpg","name":"微笑女人"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/1/c_85c6c3bf3730fa819d4c360e0dd13563.jpg","name":"Kanye 欣"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/4/c_1b3bbd089ecdf7fe623e31ea38557221.jpg","name":"青岛艾灸"},
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/3/c_0e602466fd5d02c990d9dcba752d3a73.jpg","name":"冬瓜"},
+{"url":"http://b1.ac-images.cdnmyspace.cn/cnimages01/4/c_481622496ddfd998760a9a29f421a51d.jpg","name":"钟月婵"},
+{"url":"http://b1.ac-images.cdnmyspace.cn/cnimages01/3/c_2d0f0c02d61ea0bc3637fd280f99c600.jpg","name":"常想一二"},
+{"url":"http://x.myspace.cn/images/no_pic.gif","name":"林家驹"},
+{"url":"http://x.myspace.cn/images/no_pic.gif","name":"容易被忽视"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/3/c_b60139dd10d493922877d330e8bd05f8.jpg","name":"hanbingjing"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/4/c_c4b3f184b46663f5d905efa1b9a8a7c4.jpg","name":"真情"},
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/3/c_160e10c02df2398ac6ddf48e7b6e2663.jpg","name":"金刚柱子"},
+{"url":"http://b2.ac-images.cdnmyspace.cn/cnimages01/3/c_be008988a94cc60e32557377ee2d8d66.jpg","name":"乐堂录音棚"},
+{"url":"http://b4.ac-images.cdnmyspace.cn/cnimages01/4/c_619d132ac2e3e698a8c3f0d6a8a6eace.jpg","name":"太空狗长名字长名字长名字可以更长的吗_是的_还可以阿斯利康阿达放假啦阿达放假啦爱"},
+{"url":"http://b0.ac-images.cdnmyspace.cn/cnimages01/4/c_24f2c5c9323fd6c200966e1695cdc50d.jpg","name":"威威不悔者"},
+{"url":"http://b3.ac-images.cdnmyspace.cn/cnimages01/4/c_aef6b0e84bcd2adfe93eb677fcdf0ae4.jpg","name":"jinny"}
+]
+			return data;
+		}
+		obj.innerHTML = createFriendsList(callback(),key);
+	}
+}
+function createFriendsList(data,key){
+	var len = data.length;
+	var temp = '<div class="hePopOutListItem"><img src="{src}" alt="{name}"><span>{name}</span></div>';
+	var list = [];
+	for(var i=0;i<len;i++){
+		var name = data[i].name.replace(key,'<em>' + key + '</em>');
+		list.push({src:data[i].url,name:name})
+	}
+	var html = substitute(temp,list);
+	return html;
+}
+function hePopOutListTab(obj,tab,id){
+	heFunc.hide(heFunc.get("hePopOutList"));
+	heFunc.hide(heFunc.get("hePopOutListSelected"));
+	heFunc.show(heFunc.get(id));
+	heFunc.removeClass(heFunc.get(tab),'hePopOutTabOn');
+	heFunc.addClass(obj,'hePopOutTabOn');
+}
+function inviteFrisPop(options){
+	var temp = ['<div class="hePopOutHead" id="hePopOutHead">',
+				'	<h2>好友列表</h2>',
+				'	<span title="退出">退出</span>',
+				'</div>',
+				'<div class="hePopOutSearch" id="hePopOutSearch">',
+				'	<label for="heKeywords">寻找朋友</label>',
+				'	<input type="text" id="heKeywords" />',
+				'	<span class="heClearKeywords" id="heClearKeywords" style="display:none">清除关键词</span>',
+				'</div>',
+				'<div class="hePopOutTab" id="hePopOutTab">',
+				'	<span id="hePopOutTabAll" class="hePopOutTabOn" onclick=hePopOutListTab(this,"hePopOutTabSelected","hePopOutList")>全部</span>',
+				'	<span id="hePopOutTabSelected" onclick=hePopOutListTab(this,"hePopOutTabAll","hePopOutListSelected")>已选(0)</span>',
+				'</div>',
+				'<div class="hePopOutList" id="hePopOutList">',
+				'	<div class="clear"></div>',	
+				'</div>',
+				'<div class="hePopOutList" id="hePopOutListSelected" style="display:none">',
+				'	<div class="clear"></div>',	
+				'</div>',
+				'<div class="hePopOutPanel" id="hePopOutPanel">',
+				'	<span class="heInviteBtn heQuit">退出</span>',
+				'	<span class="heInviteBtn heSendMsg">发送邀请信息</span>',
+				'</div>'].join("");
+	hePopOut(temp,options);
+	
+	var id = '_cmn_pop_out_content';
+	if(!!options.id){
+		id = options.id + id;
+	}else{
+		id = 'hePopOutDiv' + id;
+	}
+	var obj = {
+		"main" : heFunc.get(id),
+		"head" : heFunc.get("hePopOutHead"),
+		"search" : heFunc.get("hePopOutSearch"),
+		"list" : heFunc.get("hePopOutList"),
+		"select" : heFunc.get("hePopOutListSelected"),
+		"panel" : heFunc.get("hePopOutPanel")
+	}
+	var listH = parseInt(obj.main.style.height) - obj.head.clientHeight - obj['search'].clientHeight - obj.panel.clientHeight - 30 + 'px';
+	obj.list.style.height = listH;
+	obj['select'].style.height = listH;
+}	
+function hePopOut(html,options){
+	var temp = ['<table class="cmn_pop_out">',
+				'	<tr><td class="cmn_pop_out_lt"></td><td class="cmn_pop_out_bg"></td><td class="cmn_pop_out_rt"></td></tr>',
+				'	<tr><td class="cmn_pop_out_bg"></td>',
+				'		<td><div class="cmn_pop_out_content" id="{id}_cmn_pop_out_content">{html}</div></td>',
+				'	<td class="cmn_pop_out_bg"></td></tr>',
+				'	<tr><td class="cmn_pop_out_lb"></td><td class="cmn_pop_out_bg"></td><td class="cmn_pop_out_rb"></td></tr>',
+				'</table>'].join("");	
+	var temp = '<div class="cmn_pop_out_content" id="{id}_cmn_pop_out_content">{html}</div>';					
+	if (!options) {options = {};}
+	var setting = {};
+	setting.width = options.width || '500';
+	setting.height = options.height || '400';
+	var top = document.documentElement.scrollTop+document.body.scrollTop+(document.documentElement.clientHeight/2-setting.height/2);
+	var left = (document.documentElement.clientWidth/2-setting.width/2);
+	setting.top = options.top || top;
+	setting.left = options.left || left; 
+	setting.id = options.id || 'hePopOutDiv';
+	setting.temp = options.temp || temp;
+	
+	if (heFunc.get(setting.id)){
+		return false;
+	}
+	
+	popOut = document.createElement("div");
+	document.getElementsByTagName("body")[0].appendChild(popOut);
+	popOut.id = setting.id;
+	popOut.className = "hePopOutDiv";
+	var data = [];
+	data.push({id:setting.id,html:html})
+	popOut.innerHTML = substitute(setting.temp,data);
+	popOut.style.cssText = ['display:block;position:absolute;z-index:225;left:',setting.left,'px;top:',setting.top,'px;'].join("");
+	var obj = heFunc.get(setting.id+"_cmn_pop_out_content");
+	obj.style.width = setting.width+'px';
+	obj.style.height = setting.height+'px';
+}
+function substitute(template, data, regexp){
+	if(!(Object.prototype.toString.call(data) === "[object Array]")){
+		data = [data]
+	}
+	var ret = [];
+	for(var i=0,j=data.length;i<j;i++){
+		ret.push(replaceAction(data[i]));
+	}
+	return ret.join("");
+	
+	function replaceAction(object){
+		return template.replace(regexp || (/\\?\{([^}]+)\}/g), function(match, name){
+		if (match.charAt(0) == '\\') return match.slice(1);
+		return (object[name] != undefined) ? object[name] : '';
+		});
+	}
+}
+</script>
+
+</body>
+</html>

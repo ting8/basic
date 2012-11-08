@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css.css" rel="stylesheet" type="text/css" />
+<script src="basic.js"></script>
+<title>获取Dom对象属性</title>
+</head>
+
+<body>
+
+<p id="content" class="content" myname="xzf">
+accessKey, alt, disabled, id, name, tabIndex, type, className, lang, title………………<br /><br />
+id, class, style, innerHTML, value<br /><br />
+
+自定义属性: ××××××××<br /><br />
+
+方法: obj.key, getAttribute/setAttribute<br /><br />
+
+<em>不是所有属性都可写的</em>
+</p>
+
+<textarea id="jsCode">
+var obj = document.getElementById("content");
+alert(obj.className);
+alert(obj.getAttribute("class"));
+
+alert(obj.myname);
+alert(obj.getAttribute("myname"));
+</textarea>
+<input type="submit" value="execute" onclick="run()" />
+</body>
+</html>

@@ -1,0 +1,7 @@
+body,h1,h2,h3,h4,ul,ol,li,p,form,input,dl,dt,dd,td,th,table{border:none;margin:0;padding:0;list-style:none}
+h1,h2,h3{font-size:14px}
+body,h3,h4,ul,ol,li,p,small,label,input{font-size:12px;line-height:1.5;font-family:arial,"宋体"}
+a:link,a:visited,a:hover,a:active{text-decoration:none;outline: none;}
+em{font-style:normal}
+img,fieldset{border:none}
+.clear{clear:both}

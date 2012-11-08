@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css.css" rel="stylesheet" type="text/css" />
+<script src="basic.js"></script>
+<title>文档类型声明</title>
+</head>
+
+<body>
+
+<p id="content">
+</p>
+
+<textarea id="jsCode">
+<html>
+	<head>
+			<title /><link /><meta />
+	</head>
+	<body>
+			<tags />
+	</body>
+</html>
+</textarea>
+<input type="submit" value="execute" onclick="rewrite()" />
+<script>
+function rewrite(){
+		heFuncs.$("jsCode").innerHTML = '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">\n' + heFuncs.$("jsCode").innerHTML;
+}
+</script>
+</body>
+</html>

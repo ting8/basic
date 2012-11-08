@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css.css" rel="stylesheet" type="text/css" />
+<script src="basic.js"></script>
+<title>表格布局</title>
+<style>
+.content div,.content span {border:1px solid #cd0000;margin:5px}
+.content img { max-width:300px;}
+.color1 {background:green;}
+.color2 {background:skyblue;}
+.color3 {background:purple;}
+.color4 {background:yellow;}
+td {min-width:200px;min-height:200px;}
+</style>
+<style id="cssMod">
+</style>
+</head>
+
+<body>
+
+<div id="content" class="content">
+</div>
+
+<textarea id="cssCode">
+table {width:900px;table-layout:fixed;}
+</textarea>
+<textarea id="jsCode">
+<table>
+	<tr>
+		<td class="green">
+		</td>
+		<td class="yellow">
+				<img src="images/jose.jpg" alt="" />
+		</td>
+	</tr>
+</table>
+</textarea>
+<input type="submit" value="execute" onclick="runstyle();runhtml()" />
+<script>
+	
+</script>
+</body>
+</html>

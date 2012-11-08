@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css.css" rel="stylesheet" type="text/css" />
+<script src="basic.js"></script>
+<title>xml，json</title>
+</head>
+
+<body>
+	
+<h2>XML</h2>	
+<p>XML（Extensible Markup Language）即可扩展标记语言，它与HTML一样，都是SGML(Standard Generalized Markup Language,标准通用标记语言)。<br />
+
+1：XML可以作为独立的页面，xslt可以编写模板样式<br />
+2：用js处理时太过于麻烦，代码过于冗余
+</p>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;ValueSet&gt;
+	&lt;ValueItem&gt;
+		&lt;ItemValue&gt;2&lt;/ItemValue&gt;
+		&lt;CitemName&gt;北京&lt;/CitemName&gt;
+		&lt;EitemName&gt;beijing&lt;/EitemName&gt;
+		&lt;ParentValue&gt;&lt;/ParentValue&gt;
+		&lt;ItemIndex&gt;10&lt;/ItemIndex&gt;
+		&lt;Disabled&gt;False&lt;/Disabled&gt;
+		&lt;HotCity&gt;0&lt;/HotCity&gt;
+	&lt;/ValueItem&gt;
+	&lt;ValueItem&gt;
+		&lt;ItemValue&gt;1&lt;/ItemValue&gt;
+		&lt;CitemName&gt;安徽&lt;/CitemName&gt;
+		&lt;EitemName&gt;anhui&lt;/EitemName&gt;
+		&lt;ParentValue&gt;&lt;/ParentValue&gt;
+		&lt;ItemIndex&gt;5&lt;/ItemIndex&gt;
+		&lt;Disabled&gt;False&lt;/Disabled&gt;
+		&lt;HotCity&gt;0&lt;/HotCity&gt;
+	&lt;/ValueItem&gt;
+&lt;/ValueSet&gt;
+</pre>
+<pre>
+var xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+xmlDoc.async="false";
+xmlDoc.load("xml.asp");
+var node = xml.getElementsByTagName("ValueItem");
+for(var i=0,len=node.length;i&lt;len;i++){
+	node[i].selectNodes('CitemName')(0).text;;
+}
+</pre>	
+
+<br /><br /><br /><h2>JSON</h2>
+<p>JSON（JavaScript Object Notation）是一种轻量级的数据交换格式。<br />它基于JavaScript的一个子集。 </p>
+<pre>
+var city = [
+	{"ItemValue" : 2,
+	"CitemName" : "北京",
+	"EitemName" : "beijing",
+	"ParentValue" : "",
+	"ItemIndex" : 1,
+	"Disabled" : False,
+	"HotCity" : 0
+	},
+	{"ItemValue" : 1,
+	"ItemValue" : "安徽",
+	"EitemName" : "anhui",
+	"ParentValue" : "",
+	"ItemIndex" : 5,
+	"Disabled" : False,
+	"HotCity" : 0
+	}
+]
+</pre>
+<pre>
+for(var i=0,len=city.length;i&lt;len;i++){
+	city[i].CitemName;
+}
+</pre>	
+</body>
+</html>

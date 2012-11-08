@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css.css" rel="stylesheet" type="text/css" />
+<script src="basic.js"></script>
+<title>内联元素与块元素</title>
+<style>
+.content div,.content span {border:1px solid #cd0000;margin:5px}
+</style>
+</head>
+
+<body>
+
+<div id="content" class="content">
+</div>
+
+<textarea id="jsCode">
+var obj = document.getElementById("content");
+var str  = '<div>1</div>' + '<span>2</span>' + '<span>3</span>' + '<div>4</div>';
+obj.innerHTML = str;
+
+var spans = obj.getElementsByTagName("span");
+for(var i=0;i<spans.length;i++){
+//		spans[i].style.display = "block";
+}
+
+var divs = obj.getElementsByTagName("div");
+for(var i=0;i<divs.length;i++){
+//		divs[i].style.display = "inline";
+}
+
+//inline-block
+//obj.innerHTML = '<input type="submit" value="btn01" style="width:100px;" /><input type="submit" value="btn02" />'
+//obj.innerHTML = '<img src="images/box.jpg" />some content'
+</textarea>
+<input type="submit" value="execute" onclick="run()" />
+</body>
+</html>

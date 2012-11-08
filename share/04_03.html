@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css.css" rel="stylesheet" type="text/css" />
+<script src="basic.js"></script>
+<title>优先级</title>
+<style type="text/css">
+.content div,.content span {border:1px solid #cd0000;margin:5px}
+.content p {margin:0;}
+</style>
+<style type="text/css" id="cssMod">
+</style>
+</head>
+
+<body>
+<div id="content" class="content">
+	&lt;div id="content" class="content"&gt;
+		<p id="title" style="font-weight:700;color:orange">&lt;p id="title"&gt;题龙阳县青草湖&lt;/p&gt;</p>
+		<p>&lt;p&gt;西风吹老洞庭波，&lt;/p&gt;</p>
+		<p>&lt;p&gt;湘君一夜白发多；&lt;/p&gt;</p>
+		<p>&lt;p&gt;最后不知天在水，&lt;/p&gt;</p>
+		<p class="classicl">&lt;p class="classicl"&gt;满船清梦压星河。&lt;/p&gt;</p>
+	&lt;/div&gt;
+</div>
+
+<textarea id="jsCode">
+#content {border:1px solid #cd0000;}
+.content {border:1px solid #d6d6d6;}
+p {color:#333}
+</textarea>
+<input type="submit" value="execute" onclick="runcss()" />
+</body>
+</html>

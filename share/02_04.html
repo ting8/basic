@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css.css" rel="stylesheet" type="text/css" />
+<script src="basic.js"></script>
+<title>交互开发</title>
+</head>
+
+<body>
+
+<p id="content">
+我们做一个效果
+</p>
+
+<textarea id="jsCode">
+obj = document.getElementById("content");
+obj.onmouseover = function(){
+	obj.style.backgroundColor = "#000";
+	obj.style.color = "#fff";
+	obj.title = "嘿嘿，效果出来，很简单吧？"
+}
+</textarea>
+<input type="submit" value="execute" onclick="run()" />
+</body>
+</html>

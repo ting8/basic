@@ -1,0 +1,401 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="css.css" />
+<title>js 基本技能</title>
+</head>
+
+<body><div class="wrap">
+
+<table class="list">
+    <caption>基本方法</caption>
+  <tr class="title">
+    <th>分组</th>
+    <td>方法</td>
+    <td>参数</td>
+    <td>备注</td>
+  </tr>
+  <tr>
+    <th>window</th>
+    <td>open, close, top, name, navigator,  history <br />
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>document</th>
+    <td>cookie,  domain,  referrer,  title,   URL<br />
+        getElementById,  getElementsByTagName,  createElement<br />
+        write,  writeln
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>navigator</th>
+    <td>userAgent,  userLanguage,  platform，  plugins    <br />
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>location</th>
+    <td>
+        hash,  host,  hostname,  href,  pathname,  port,  protocol,  search<br />
+        reload,  replace
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>对话框</th>
+    <td>
+        alert,  confirm,  prompt
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>Math</th>
+    <td>
+        abs, ceil, floor, max, min, random, round, sqrt</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>array</th>
+    <td>length,  concat,  join,  push, slice,  sort</td>
+    <td></td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <th>动画</th>
+    <td>setInterval,  setTimeout</td>
+    <td></td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <th>事件</th>
+    <td>
+        onclick, ondblclick, onmouseover, onmousemove, onmouseout, onkeypress, onkeydown, onkeyup<br />
+        onload, onscroll, onblur, onchange, onfocus, onsubmit
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>节点属性</th>
+    <td>
+        nodeName,  nodeValue,  nodeType
+    </td>
+    <td></td>
+    <td>元素/1,  属性/2,  文本/3,  注释/8,  文档/9</td>
+  </tr>
+  
+  <tr>
+    <th>节点关系</th>
+    <td>
+        parentNode,  firstChild,  lastChild,  nextSibling,  previousSibling
+    </td>
+    <td></td>
+    <td></td>
+  </tr>
+ </table> 
+
+
+<p style="height:30px;"></p> 
+ 
+<table class="list">
+  <caption>数据类型与转化</caption>
+  <tr>
+    <th>数据类型</th>
+    <td>function, object,  array,  boolean,  string,  undefined</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>转化方法</th>
+    <td>
+        parseInt ,  !, 自动转化<br />
+        </td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>重要转化</th>
+    <td>
+        1: 其他变量转化为字符串<br />
+        2: json与json格式的字符串间的互相转化<br />
+        3: array与字符串间的互相转化<br />
+        </td>
+    <td>
+        toSTring,  += ''<br />
+        调用库方法HE.json2Obj 与 HE.json2Str<br />
+        join,  split<br /> 
+    </td>
+    <td></td>
+  </tr>
+</table> 
+ 
+<p style="height:30px;"></p> 
+ 
+<table class="list">
+  <caption>操控页面</caption>  <tr>
+    <th>操纵title</th>
+    <td>document.title</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>操纵dom</th>
+    <td>innerHTML,  appendChild,  removeChild, insertBefore</td>
+    <td></td>
+    <td>innerText == obj.innerHTML.replace(/<.+?>/gim,’’)</td>
+  </tr>
+  <tr>
+    <th>操作样式</th>
+    <td>
+        className,  style, cssText</td>
+    <td></td>
+    <td>
+    </td>
+  </tr>
+  <tr>
+    <th>引入资源</th>
+    <td>
+        css <br />
+        js<br />
+    </td>
+    <td>
+        调用库方法HE.insertCSS(无回调事件)<br />
+        调用库方法HE.insertJS(异步，有回调事件)<br />        
+    </td>
+    <td></td>
+  </tr>
+</table>
+
+<p style="height:30px;"></p> 
+ 
+<table class="list">
+  <caption>事件注册</caption>  <tr>
+    <th>dom ready</th>
+    <td></td>
+    <td>调用库方法HE.onReady</td>
+    <td></td>
+  </tr>
+  <tr>
+    <th>注册方法</th>
+    <td>
+        ＜body onload="events(this)"＞<br />
+        obj.onclick = function(){****}<br />
+        obj.onclick = functionName<br />
+    </td>
+    <td></td>
+    <td>addEventListener,  attachEvent</td>
+  </tr>
+</table>
+
+<p style="height:30px;"></p> 
+
+<table class="list">
+  <caption>框架学习</caption>  
+  <thead>
+  <tr>
+    <th>库文件</th>
+    <td>http://static.test.gip.happyelements.com/common/lib_0_1.js</td>
+    <td>备注</td>
+  </tr>  
+  </thead>
+  <tr>
+    <th>broswer</th>
+    <td>function    ()</td>
+    <td>获取浏览器版本号，返回值格式为 msie/6.0</td>
+  </tr>
+  <tr>
+    <th>$</th>
+    <td>function    (slector)</td>
+    <td>获取一个或者多个元素 slector格式为 #id .class tagName, 返回值为单个object或者object array</td>
+  </tr>
+  <tr>
+    <th>getProp</th>
+    <td>function    (obj,prop)</td>
+    <td>获取obj的属性prop的值</td>
+  </tr>
+  <tr>
+    <th>setProp</th>
+    <td>function    (obj,prop,value)</td>
+    <td>将obj的属性prop的值改写为value</td>
+  </tr>
+  <tr>
+    <th>show</th>
+    <td>function    (obj)</td>
+    <td>显示元素 obj为#id或者一个object</td>
+  </tr>
+  <tr>
+    <th>hide</th>
+    <td>function    (obj)</td>
+    <td>隐藏元素 obj为#id或者一个object</td>
+  </tr>
+  <tr>
+    <th>hasClass</th>
+    <td>function    (obj,_class)</td>
+    <td>判断obj是否引用_class的class,返回boolean值</td>
+  </tr>
+  <tr>
+    <th>addClass</th>
+    <td>function    (obj,_class)</td>
+    <td>给obj添加样式_class</td>
+  </tr>
+  <tr>
+    <th>removeClass</th>
+    <td>function    (obj,_class)</td>
+    <td>将obj的样式_class移除</td>
+  </tr>
+  <tr>
+    <th>encode</th>
+    <td>function    (c, d, a)</td>
+    <td>将object c通过连接符d转化为字符串，a为boolean变量，true时对object[key]做encodeURIComponent处理</td>
+  </tr>
+  <tr>
+    <th>decode</th>
+    <td>function    (f)</td>
+    <td>将a=1&b=2转化为{a:1,b:2}</td>
+  </tr>
+  <tr>
+    <th>guid</th>
+    <td>function    ()</td>
+    <td>生成一个以f开头的随机字符串</td>
+  </tr>
+  <tr>
+    <th>json2Obj</th>
+    <td>function    (astr)</td>
+    <td>将json格式的字符串（'{a:1,b:2}'）转化为json变量（{a:1,b:2}）</td>
+  </tr>
+  <tr>
+    <th>getPara</th>
+    <td>function    (url,name)</td>
+    <td>获取地址url中的参数name的值</td>
+  </tr>
+  <tr>
+    <th>setPara</th>
+    <td>function (url,name,value)</td>
+    <td>将地址url中的参数name的值设置为value，如果url中没有name则为新增，有则覆盖</td>
+  </tr>
+  <tr>
+    <th>getHash</th>
+    <td>function    (name)</td>
+    <td>获取地址栏hash中name变量的值</td>
+  </tr>
+  <tr>
+    <th>setHash</th>
+    <td>function    (name,value)</td>
+    <td>将地址栏hash中的参数name值设置为value，没有新增，有则覆盖</td>
+  </tr>
+  <tr>
+    <th>substitute</th>
+    <td>function    (template, data, regexp)</td>
+    <td>将html模板与数据data自动处理成想用的html代码片段</td>
+  </tr>
+  <tr>
+    <th>insertCSS</th>
+    <td>function    (link)</td>
+    <td>往页面中插入地址为link的css样式表</td>
+  </tr>
+  <tr>
+    <th>insertJS</th>
+    <td>function    (link,callback)</td>
+    <td>往页面中插入地址为link的js文件，callback为此文件加载完毕的回调</td>
+  </tr>
+  <tr>
+    <th>swfObject</th>
+    <td>function    (data)</td>
+    <td>根据数据data生成一段falsh的代码</td>
+  </tr>
+  <tr>
+    <th>loadJsonP</th>
+    <td>function (asUrl,    callback)</td>
+    <td>将页面asUrl返回的值作为callback的参数并放入页面的head区域</td>
+  </tr>
+  <tr>
+    <th>loadAjax</th>
+    <td>function    (option)</td>
+    <td>post方式的ajax, option格式为{url:url,mothed:'post',data:{a:1,b:2},callback:callback}</td>
+  </tr>
+  <tr>
+    <th>trim.left</th>
+    <td>function    (str)</td>
+    <td>移除字符串str左边的空格</td>
+  </tr>
+  <tr>
+    <th>trim.right</th>
+    <td>function    (str)</td>
+    <td>移除字符串str右边的空格</td>
+  </tr>
+  <tr>
+    <th>trim.both</th>
+    <td>function    (str)</td>
+    <td>移除字符串str两端的空格</td>
+  </tr>
+  <tr>
+    <th>trim.all</th>
+    <td>function    (str)</td>
+    <td>移除字符串str中所有的空格</td>
+  </tr>
+  <tr>
+    <th>array.indexOf</th>
+    <td>function    (a, c)</td>
+    <td>返回字符c在字符串a的位置，返回变量c在数组a中的位置</td>
+  </tr>
+  <tr>
+    <th>array.merge</th>
+    <td>function    (c, b)</td>
+    <td>合并两个数组c和b,并且自动合并相同项</td>
+  </tr>
+  <tr>
+    <th>array.filter</th>
+    <td>function    (a, c)</td>
+    <td>通过方法c来过滤数组a</td>
+  </tr>
+  <tr>
+    <th>array.keys</th>
+    <td>function    (c, d)</td>
+    <td>将object c的所有key值组成数组返回</td>
+  </tr>
+  <tr>
+    <th>array.forEach</th>
+    <td>function    (c, a, f)</td>
+    <td>通过方法a处理c的每一项值, 方法的形参为a(c[d], d, c), c为数组时,d为数组的index值，而当c为object时,d为key</td>
+  </tr>
+</table>
+
+<div class="demos" style="min-height:600px;display:none">
+    <h2>页面制作</h2>
+	<div id="guidemap" class="guidemap">
+		<a href="###s_0"><span>表单</span></a>
+		<a href="###s_1"><span>表格</span></a>
+		<a href="###s_2"><span>菜单</span></a>
+		<a href="###s_3"><span>列表01</span></a>
+		<a href="###s_4"><span>列表02</span></a>
+		<a href="###s_5"><span>组合</span></a>
+		<a href="###s_6"><span>分页</span></a>
+		<a href="###s_7"><span>布局</span></a>
+	</div>
+	<div style="min-height:600px;display:none">
+		<div id="s_0"><img src="images/form.png" /></div>
+		<div id="s_1"><img src="images/table.png" style="margin:10px;" /></div>
+		<div id="s_2"><img src="images/menu.png" /></div>
+		<div id="s_3"><img src="images/list01.png" /></div>
+		<div id="s_4"><img src="images/list02.png" /></div>
+		<div id="s_5"><img src="images/content.png" /></div>
+		<div id="s_6"><img src="images/page.png" /></div>
+		<div id="s_7"><img src="images/grid.png" /></div>
+	</div>
+</div> 
+
+
+<script type="text/javascript" src="js.js"></script>
+</div></body>
+</html>

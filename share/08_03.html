@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css.css" rel="stylesheet" type="text/css" />
+<script src="basic.js"></script>
+<title>定位</title>
+<style>
+td {min-width:200px;min-height:200px;}
+</style>
+<style id="cssMod">
+</style>
+</head>
+
+<body>
+
+<div id="content" class="content">
+</div>
+
+<textarea id="cssCode">
+.clear {clear:both;font-size:0;}
+.wrap {width:900px;height:320px;position:relative}
+.left {width:450px;height:100px;position:absolute;top:0;left:0;}
+.right {width:450px;position:absolute;top:0;right:0;}
+.right img {width:200px;height:300px;}
+</textarea>
+<textarea id="jsCode">
+<div class="wrap yellow">
+		<div class="left purple"></div>
+		<div class="right skyblue">
+				<img src="images/jose.jpg" alt="" />
+		</div>
+		<div class="clear"></div>
+</div>
+</textarea>
+<input type="submit" value="execute" onclick="runstyle();runhtml()" />
+<script>
+	
+</script>
+</body>
+</html>

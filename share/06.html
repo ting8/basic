@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>表单</title>
+<script src="basic.js"></script>
+<style type="text/css">
+* {font-size:12px;line-height:22px; font-family:Arial;}
+fieldset {width:500px; margin-bottom:30px;}
+li { padding-bottom:10px;}
+label { padding-right:40px;}
+select {width:70px;}
+</style>
+</head>
+
+<body>
+
+<fieldset>
+	<legend>用户注册</legend>
+	<form action="" method="post">
+		<ol>
+			<li>
+				<label for="username">用户名</label>
+				<input type="text" id="username" name="username" />
+			</li>
+			<li>
+				<label for="password">密码</label>
+				<input type="password" id="password" name="password" />
+			</li>
+			<li>
+				<label for="photo">头像</label>
+				<input type="file" id="photo" />
+			</li>			
+			<li>
+				<label for="man">性别</label>
+				<input type="radio" name="gender" id="man" /><label for="man">男</label>
+				<input type="radio" name="gender" id="woman" /><label for="woman">女</label>
+			</li>
+			<li>
+				<label for="area">地区</label>
+				<select name="area" id="area">
+					<option value="">请选择</option>
+					<optgroup label="亚洲">
+						<option value="cn">中国</option>
+						<option value="jp">日本</option>
+						<option value="kr">韩国</option>
+					</optgroup>
+					<optgroup label="欧洲">
+						<option value="de">德国</option>
+						<option value="fr">法国</option>
+						<option value="uk">英国</option>
+					</optgroup>
+					<option value="un">美国</option>
+					<option value="ca">加拿大</option>
+					<option value="it">意大利</option>
+					<option>特立尼达和多巴哥共和国</option>
+				</select>
+			</li>
+			<li>
+				<label for="enjoy">兴趣爱好</label>
+				<select name="enjoy" size="8" multiple="multiple" id="enjoy">
+					<option>请选择</option>
+					<option>体育</option>
+					<option>音乐</option>
+					<option>电影</option>
+					<option>阅读</option>
+					<option>时尚</option>
+					<option>历史</option>
+					<option>饮食</option>
+					<option>旅游</option>
+			  </select>
+			</li>
+			<li>
+				<label for="net">信息来源</label>
+				<input type="checkbox" name="infofrom" id="net" value="1" checked="checked" /><label for="net">网络</label>
+				<input type="checkbox" name="infofrom" id="paper" value="2" /><label for="paper">报纸</label>
+				<input type="checkbox" name="infofrom" id="other" value="3" /><label for="other">其他</label>
+			</li>
+			<li>
+				<label for="note">备注</label>
+				<textarea name="note" id="note" cols="60" rows="5"></textarea>
+			</li>
+		</ol>
+		<input type="hidden" value="http://" />
+		<input type="submit" value="提交[type=submit]" />
+		<input type="button" value="提交[type=button]" />
+		<input type="image" value="提交[type=image]" src="images/reg.jpg" alt="提交" />
+		<button>提交button</button><br /><br />
+
+
+		<input type="reset" value="重新填写" />
+	</form>
+</fieldset>
+
+<a href="http://www.cxpartners.co.uk/thoughts/web_forms_design_guidelines_an_eyetracking_study.htm">Web form design guidelines: an eyetracking study</a><br />
+<a href="form/forms_design.pdf">forms_design</a><br />
+<a href="form/Forms_LukeW.pdf">Forms_LukeW</a><br />
+
+</body>
+</html>

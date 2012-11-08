@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css.css" rel="stylesheet" type="text/css" />
+<script src="basic.js"></script>
+<title>jsonP</title>
+</head>
+
+<body>
+	
+<h2>jsonP</h2>
+<p>jsonP是一个非官方的协议，它允许在服务器端集成Script tags返回至客户端，通过javascript callback的形式实现跨域访问（这仅仅是JSONP简单的实现形式）。</p>
+<pre>
+function loadJsonP(asUrl, afCallback){
+	 if (!asUrl) {
+		return false;
+	 }
+	 var lsUrl = asUrl;
+	 if (lsUrl.indexOf("callback=") == -1) {
+		var lsGUID="_autoCallBack"+Math.floor(Math.random()*16000).toString(16);
+		lsUrl = lsUrl + (lsUrl.indexOf("?") != -1 ? "&" : "?") + "callback=" + lsGUID;
+	 }
+	 window[lsGUID] = afCallback;
+	 
+	 var leTag = document.createElement('script');
+	 leTag.setAttribute('type', 'text/javascript');
+	 leTag.setAttribute('src', lsUrl);
+	 document.getElementsByTagName('head')[0].appendChild(leTag);
+}	
+</pre>
+<pre>
+var url = 'http://query.yahooapis.com/v1/public/yql?q=',
+	url += 'select * from flickr.photos.recent&diagnostics=true';
+	loadJsonP(url,callback)
+</pre>
+<pre>
+callback(dataFromDb);
+</pre>
+
+<pre>
+function callback(data){
+	alert(data)
+}
+</pre>
+</body>
+</html>

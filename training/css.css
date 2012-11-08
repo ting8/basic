@@ -1,0 +1,17 @@
+﻿* {margin:0;padding:0;list-style:none;font-size:12px;line-height:20px;}
+.wrap {padding:20px 40px;}
+.list {border:1px solid #ccc;width:100%;border-collapse:collapse;}
+.list caption {background:#333;color:#fff;padding:5px 20px;text-align:left;font-size:14px;font-weight:700;}
+.list thead td,.list thead th {background:#f5f5f5;font-weight:700;color:#333;}
+.list td,.list th {border-top:1px solid #f5f5f5;padding:5px;}
+.list tbody tr:hover {background:#f5f5f5;}
+.list td {text-align:left;font-family:arial;}
+.list th {text-align:right;width:110px;font-family:arial;padding-right:15px;}
+.title { background:#ddd;}
+
+.demos {margin-top:30px;}
+.demos h2 {font-size:14px;border-bottom:1px solid #d6d6d6;background:#f5f5f5;line-height:30px;margin-bottom:10px;padding-left:10px;}
+.guidemap{padding-left:10px;}
+.guidemap a{margin-right:10px;color:#666;}
+.guidemap a.current{text-decoration:none;}
+.guidemap a.current span {color:#333;font-weight:700;font-size:14px;}

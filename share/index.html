@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>前端开发交流</title>
+<style type="text/css">
+* { font-family:Arial; line-height:1.5;color:#4a4a4a;}
+h1{ font-size:16px;}
+strong {font-size:12px; cursor:pointer;font-weight:400;}
+li {font-size:12px;padding-bottom:10px;}
+li li { padding:0;}
+li ol { display:none;padding-bottom:20px;}
+li.open ol { display:block;padding-top:10px;}
+.open strong {font-weight:700;}
+a {color:#147DBA; text-decoration:none;}
+a,span{line-height:22px;}
+a:hover {text-decoration:underline;}
+
+.examples {width:200px;padding:10px;border:1px solid #d6d6d6;background:#f5f5f5;position:fixed;right:5px;top:5px;}
+.examples h2 {font-size:12px;margin:0;padding:0 0 10px 0;}
+.examples a {font-size:12px;margin-left:1em;}
+.download {position:fixed;right:5px;bottom:5px;font-size:20px;border:1px solid #d6d6d6;background:#f5f5f5;}
+.download a {display:block;padding:10px;color:#000}
+</style>
+</head>
+
+<body>
+	
+<div class="wrap">
+<h1>前端开发交流</h1>
+<ol id="menu">
+	<li>
+		<strong>js的装载运行以及变量和函数（2010.11.04 周四）</strong>
+		<ol>
+		  <li><a href="01_01.html">js的引擎与兼容性</a></li>
+		  <li><a href="01_02.html">js代码的载入</a></li>
+		  <li><a href="01_03.html">数据类型</a></li>
+		  <li><a href="01_04.html">变量定义</a></li>
+		  <li><a href="01_05.html">函数的定义与引用</a></li>
+		</ol>
+	</li>
+	<li>
+		<strong>对象以及事件交互 （2010.11.05 周五）</strong>
+		<ol>
+		  <li><a href="02_01.html">获取Dom对象</a></li>
+		  <li><a href="02_02.html">获取Dom对象属性</a></li>
+		  <li><a href="02_03.html">事件</a></li>
+		  <li><a href="02_04.html">交互开发</a></li>
+		</ol>
+	</li>
+	<li>
+		<strong>创建Dom树（制作html页面） （2010.11.08 周一）</strong>
+		<ol>
+		  <li><a href="03_02.html">盒模型</a></li>
+		  <li><a href="03_01.html">文档类型声明</a> ?邮件模板</li>
+		  <li><a href="03_03.html">内联元素与块元素</a></li>
+		  <li><a href="03_04.html">标签语义</a></li>
+		</ol>
+	</li>
+	<li>
+		<strong>使用css （2010.11.09 周二）</strong>
+		<ol>
+		  <li><a href="04_01.html">css reset</a></li>
+		  <li><span>css的常见命令</span></li>
+		  <li><a href="04_02.html">*，	tag，	id，class以及style五种选择器</a></li>
+		  <li><a href="04_03.html">优先级</a></li>
+		</ol>
+	</li>
+	<li>
+		<strong>列表 标签 （2010.11.09 周三）</strong>
+		<ol>
+		  <li><a href="05_01.html">table[caption，col，colgroup，thead，tbody，tfoot，tr，th，td]</a></li>
+		  <li><a href="05_02.html">ul，ol，li</a></li>
+		  <li><a href="05_03.html">dl，dt，dd</a></li>
+		</ol>
+	</li>
+	<li>
+		<strong><a href="06.html">表单 标签</a>（2010.11.09 周三）</strong>
+		<ol>
+		  <li><span>fieldset，legend，form</span></li>
+		  <li><span>label</span></li>
+		  <li><span>button</span></li>
+		  <li><span>textarea</span></li>
+		  <li><span>slect，optgroup，option</span></li>
+		  <li><span>input[button,checkbox,file,hidden,image,password,radio,reset,submit,text]</span></li>
+		</ol>
+	</li>
+	<li class="open">
+		<strong>多媒体 标签</strong>
+		<ol>
+		  <li><a href="07_01.html">img</a></li>
+		  <li><a href="07_02.html">flash</a></li>
+		  <li><a href="MusicPlayer/MusicPlayer.html">audio</a></li>
+		  <li><span>vedio</span></li>
+		</ol>
+	</li>
+	<li>
+		<strong>布局</strong>
+		<ol>
+		  <li><a href="08_01.html">表格</a>（2010.11.11 周四）</li>
+		  <li><a href="08_02.html">浮动</a>（2010.11.11 周四）</li>
+		  <li><a href="08_03.html">定位</a>（2010.11.15 周一）</li>
+		  <li><a href="08_04.html">其他方式？</a>（2010.11.15 周一）</li>
+		</ol>
+	</li>
+	<li>
+		<strong>项目开发 （2010.11.16 周二）</strong>
+		<ol>
+		  <li><a href="radar/radar01.jpg">理解设计稿，理解产品</a>（看透设计稿，具体问题和设计师或者产品人员进行确认）</li>
+		  <li><a href="radar/css/reset.css">css reset</a></li>
+		  <li><a href="09_01.html">布局</a></li>
+		  <li><a href="09_02.html">html代码设计</a>（为什么说是代码设计？）</li>
+		  <li><a href="09_03.html">css和js效果添加</a></li>
+		</ol>
+	</li>
+	<li class="open"><strong><a href="flow.html">前端开发的一般流程</a>（2010.11.22 周一）</strong></li>
+	<li class="open">
+		<strong>好友选择组件开发 （2010.11.23 周二）</strong>
+		<ol>
+		  <li><a href="friendsSelect/01-需求.html">需求文档</li>
+		  <li><a href="friendsSelect/02-好友列表.jpg">设计稿</li>
+		  <li><a href="friendsSelect/03-data.html">数据模拟</a></li>
+		  <li><a href="friendsSelect/index_0.html">beta版</a></li>
+		  <li><a href="friendsSelect/index_1.html">改进版</a></li>
+		  <li><a href="friendsSelect/index_2.html">发布版</a></li>
+		</ol>
+	</li>
+	<li>
+		<strong>异步请求ajax</strong>
+		<ol>
+		  <li><a href="10_01.html">数据格式（xml，json）</a></li>
+		  <li><a href="10_02.html">jsonP</a></li>
+		  <li><span>同源策略（所谓同源是指，域名，协议，端口相同）</span></li>
+		  <li><a href="10_03.html">post，get</a></li>
+		  <li><a href="10_04.html">XMLHttpRequest</a></li>
+		</ol>
+	</li>
+	<li>
+		<strong>页面性能优化</strong>
+		<ol>
+		  <li><span>页面运行机制</span></li>
+		  <li><span>优化的方法</span></li>
+		</ol>
+	</li>
+	<li>
+		<strong>名词解释以及demo演示</strong>
+		<ol>
+		  <li><span>站点，域名，IP，Host配置</span></li>
+		  <li><span>url，location（href，hash，port，protocol，search）</span></li>
+		  <li><span>http request</span></li>
+		  <li><span>dom ready</span></li>
+		  
+		  <li><span>定位</span></li>
+		  
+		  <li><span>字体选择，行高设置</span></li>
+		  <li><span>文字过长处理</span></li>
+		  
+		  <li><span>图片倒影</span></li>
+		  <li><span>图片等比例缩放</span></li>
+		  
+		  
+		  <li><span>iframe高度自适应</span></li>
+		  <li><span>textarea高度自适应</span></li>
+		  <li><span>select模拟</span></li>
+		  
+		  <li><span>斑马线</span></li>
+		  <li><span>活页夹（tab切换）</span></li>
+		  <li><span>进度条（progress bar）</span></li>
+		  <li><span>弹出层（遮罩滚动条）</span></li>
+		  <li><span>弹出窗口</span></li>
+		  
+		  
+		  <li><span>loadjsonP</span></li>
+		</ol>
+	</li>
+</ol>
+
+<div class="examples">
+	<h2>Examples</h2>
+	<a href="example/email.html">Email输入格式验证</a><br />
+	<a href="example/iecss.html">IE各版本默认css</a><br />
+	<a href="example/ncz.html">NCZ面试</a><br />
+	<a href="example/sec508.html">section 508</a><br />
+	<a href="example/friendsSelect/index.html">friends Select</a><br />
+	
+</div>	
+
+
+</div>
+
+<script>
+	var obj = document.getElementById("menu").getElementsByTagName("strong");
+	var len = obj.length;
+	for(var i=0;i<len;i++){
+		obj[i].onclick = function(){
+			if (this.parentNode.className.indexOf("open")>-1){
+				this.parentNode.className = "";
+			}else{
+				this.parentNode.className = "open";
+			}
+		}
+	}
+</script>
+</body>
+</html>

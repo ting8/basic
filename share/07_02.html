@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css.css" rel="stylesheet" type="text/css" />
+<script src="basic.js"></script>
+<title>flash</title>
+<style>
+.content div,.content span {border:1px solid #cd0000;margin:5px}
+dl {border:1px solid #d6d6d6;padding:10px;}
+dt {font-weight:700;}
+dd {margin:0 0 20px 2em}
+</style>
+</head>
+
+<body>
+
+<div id="content" class="content">
+</div>
+<textarea id="jsCode">
+<object width="85" height="30" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" >
+	<param name="movie" value="images/wave.swf" />
+</object>
+文字间隔
+<embed src="images/wave.swf" width="85" height="30"></embed>
+</textarea>
+<input type="submit" value="execute" onclick="runhtml()" />
+
+<h3>flash code</h3>
+<pre>&lt;object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" <em>width="85"</em> <em>height="30"</em>&gt;
+		<em>&lt;param name="movie" value="images/wave.swf" /&gt;</em>
+		&lt;param name="quality" value="high" /&gt;
+		<em>&lt;param name="wmode" value="transparent" /&gt;</em>
+		&lt;embed <em>src="images/wave.swf"</em> quality="high" <em>wmode="transparent"</em> pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"<em> width="85"</em> <em>height="30"</em>&gt;&lt;/embed&gt;
+	&lt;/object&gt;
+</pre>
+
+<br /><br /><h3>必需属性： </h3>
+<dl>
+  <dt>CLASSID</dt><dd>设置浏览器的Activex控件，仅用于OBJECT标签。</dd>
+  <dt>CODEBASE</dt><dd>设置flash Activex控件的位置，因而如果浏览器如果没有安装的话，可以自动下载安装。仅用于OBJECT标签。</dd>
+  <dt>WIDTH</dt><dd>以百分比或象素指定flash影片的宽度。</dd>
+  <dt>HEIGHT</dt><dd>以百分比或象素指定flash影片的高度。</dd>
+  <dt>SRC</dt><dd>指定影片的下载地址。仅用于EMBED标签。</dd>
+  <dt>PLUGINSPAGE</dt><dd>设置flash 插件的位置，因而如果浏览器如果没有安装的话，可以自动下载安装。仅用于EMBED标签。</dd>
+  <dt>MOVIE</dt><dd>指定影片的下载地址。仅用于OBJECT标签。</dd>
+</dl>
+
+
+<br /><br /><h3>可选属性及可用的值：</h3> 
+<dl>
+  <dt><em>WMODE</em></dt>
+  <dd>Transparent 使flash影片透明</dd>
+  <dt><em>BGCOLOR</em></dt><dd>（#RRGGBB, 十六进制RGB值。）指定影片的背景颜色。使用这个属性覆盖flash中设定的背景颜色。</dd> 
+  <dt>ID</dt><dd>设定变量名，用于脚本代码的引用。仅用于OBJECT。</dd>
+  <dt>NAME</dt><dd>设定变量名，用于脚本代码（如javascript）的引用。仅用于EMBED。</dd>
+  <dt>SWLIVECONNECT</dt><dd>（true或false）指定当flash player第一次下载时，是否启用java。如果些属性省略，默认值为false。你果你在相同页同使用javascript和flash，java必须使用FSCommand来工作。</dd>
+  <dt>PLAY</dt><dd>（true或false）指定flash影片是否在下载完成后就自动播放，如果省略此属性，则默认为true。</dd>
+  <dt>LOOP</dt><dd>（true或false）指定影片播放完最后一帧后是停止还是继续循环播放，如果省略此属性，则默认为true。</dd>
+  <dt>MENU</dt><dd>（true或false）<br />
+		True 显示全部的菜单，允许用户放大，缩小等控制影片播放等操作；<br />
+		False 显示只包含设置选项和关于flash的菜单。</dd>
+  <dt>QUALITY</dt> 
+  <dt>No Boder </dt><dd>收缩影片以适合指定的区域，保持影片不失真，但部分影片将可能将裁切。然而保持影片的原始比例。</dd> 
+  <dt>ALIGN</dt> 
+  <dt>BASE </dt> 
+  <dt>FLASHVARS</dt><dd> 传递变量到flash player，需要flash player6及以后的版本;传递root级变量到影片。字符串的格式是用“&”分隔的name=value集;浏览器支持64kB大小的字符串长度。</dd>
+</dl>
+</pre>
+
+
+<br /><br /><h3>flash的z-index问题</h3>
+<pre>topFlashLink({id:'flash',url:'http://baidu.com',text:'baidu'})
+function topFlashLink(options){
+	if(!!options){return false;}
+	_id = options.id;
+	
+	var obj = document.getElementById(_id);
+	if(!obj){return false;}
+		obj.style.position = "relative";
+		
+	_width = obj.clientWidth;
+	_height = obj.clientHeith;
+	_url = options.url || '#';
+	_text = options.text || '&#160;';
+		
+	var cssStr = ['position:absolute;left:0;top:0;display:block;overflow:hidden;',
+				'z-index:50;opacity:0;filter:alpha(opacity=0);',
+				'width:', _width, ';',
+				'height:', _height, ';',
+				'line-height:', _height*3].join("");
+	var newElement = document.createElement("iframe");
+		obj.appendChild(newElement);
+		newElement.style.cssText = cssStr;
+	var newElement = document.createElement("a");
+		newElement.href = _url;
+		newElement.innerHTML = _text;
+		newElement.title = _text;
+		obj.appendChild(newElement);
+		newElement.style.cssText = cssStr;
+}</pre>
+
+
+
+<br /><br />
+http://en.wikipedia.org/wiki/Embedded<br />
+http://www.phpx.com/man/dhtmlcn/objects/EMBED.html<br />
+http://www.htmlcodetutorial.com/embeddedobjects/_EMBED.html
+</body>
+</html>

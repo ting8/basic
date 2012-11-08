@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css.css" rel="stylesheet" type="text/css" />
+<script src="basic.js"></script>
+<title>img</title>
+<style>
+.content div,.content span {border:1px solid #cd0000;margin:5px}
+.content img { max-width:300px;}
+</style>
+</head>
+
+<body>
+
+<div id="content" class="content">
+</div>
+
+<textarea id="jsCode">
+<a href="#"><img src="images/jose.jpg" onerror="imgError(this)"  /></a>
+</textarea>
+<input type="submit" value="execute" onclick="runhtml()" />
+<script>
+function imgError(obj){
+	alert("图片地址" + obj.src +  "无效！");
+}
+</script>
+</body>
+</html>
