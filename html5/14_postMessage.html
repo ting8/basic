@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>post message</title> 
+</head> 
+ 
+<body> 
+
+<span onclick="workers()">hello worker</span>
+
+<ol id="a">
+</ol>
+
+<script type="text/javascript" src="res/lib.js"></script>
+<iframe src="http://jsappdemo.happyelements.net/msg.html" frameborder="0"></iframe>
+<script> 
+window.addEventListener("message",callback,true);
+
+function callback(data){
+	var obj = HE.$('#a');
+	var id = HE.guid();
+	var node = HE.objMock(id,obj,'li');
+	HE.trace(data)
+	switch(data.origin){
+		case "http://jsappdemo.happyelements.net":
+			node.textContent = data.data;
+			break;
+		default:
+			//alert(data.data);
+	}
+}
+
+function workers(){
+	worker = new Worker('res/echo.js');
+	worker.postMessage('hi,here is a new message for John.');
+	worker.addEventListener('message',function(e){alert(e.data)},true)
+}
+</script> 
+</body> 
+</html>

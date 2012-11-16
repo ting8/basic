@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<script language="JavaScript" type="text/javascript" src="../core/app/jsUnitCore.js"></script> 
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core_test.js"></script>
+</head>
+<TITLE>get object(s)</TITLE>
+
+<div class="pm_menu">
+	<div class="pm_methods_items" id="pm_methods_items">
+		<a href="#" id="paypal" class="paypal current"><em></em><span>PayPal</span></a>
+		<a href="#" id="mycard_point" class="mycard_point"><em></em><span>MyCard Point</span></a>
+		<a href="#" id="mycard_member" class="mycard_member"><em></em><span>MyCard Member</span></a>
+		<a href="#" id="web_atem" class="web_atem"><em></em><span>Web ATEM</span></a>
+		<a href="#" id="facebook_credit" class="facebook_credit"><em></em><span>Facebook Credit</span></a>
+	</div>
+</div>
+
+<script language="JavaScript">
+function testGetObj(){
+	//使用id获取一个对象
+	assertEquals("#pm_methods_items is a object", 'object', typeof getObj('#pm_methods_items'));  
+	//获取id里的所有a 
+	assertEquals("#pm_methods_items a·s length", 5, getObj('#pm_methods_items a').length);  
+	assertEquals("div div a.s length", 5, getObj('div div a').length);  
+	assertEquals("head script s length", 3, getObj('head script').length);  
+
+	//获取id里的第一个a
+	assertEquals("#pm_methods_items a[0] type", 'object', typeof getObj('#pm_methods_items a')[0]);  
+	assertEquals("#pm_methods_items a[1] class", 'mycard_point', getObj('#pm_methods_items a')[1].className);  
+	assertEquals("#pm_methods_items a[2] id", 'mycard_member', getObj('#pm_methods_items a')[2].id);  
+}
+</script>
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>

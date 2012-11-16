@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<script language="JavaScript" type="text/javascript" src="../core/app/jsUnitCore.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core_test.js"></script>
+<TITLE>get/set prop</TITLE>
+
+<div class="pm_menu">
+	<div class="pm_methods_items" id="pm_methods_items">11111</div>
+</div>
+
+<script language="JavaScript">
+function setUp(){
+	div = NE.$("#pm_methods_items");
+	setProp(div,'lang',"en");	
+}
+function testGetProp(){
+	assertEquals("div`s id is pm_methods_items", 'pm_methods_items',getProp(div,'id')); 
+	assertEquals("div`s html is 11111", '11111',getProp(div,'innerHTML')); 
+	assertEquals("div`s lang is en", 'en',getProp(div,'lang')); 
+}
+</script>
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>

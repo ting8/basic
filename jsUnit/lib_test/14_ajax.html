@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<script language="JavaScript" type="text/javascript" src="../core/app/jsUnitCore.js"></script> 
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core_test.js"></script>
+<TITLE>14_ajax</TITLE>
+<script language="JavaScript">
+function setUpPage(){
+	//get
+	var step = 0;
+	
+	var url1 = "get.php?a=1";
+	var url2 = "get.php?a=[1,3,4,5]";
+	var url3 = "get.php?a={a:1,b:2}";
+	
+	loadJsonP(url1,function(data){
+		window.g1 = data;
+		startTest();
+	});
+	loadJsonP(url2,function(data){
+		window.g2 = data;
+		startTest();
+	});
+	loadJsonP(url3,function(data){
+		window.g3 = data;
+		startTest();
+	});
+	
+	//post
+	var url4 = "post.php";
+	var param = {a:"4"};
+	
+	loadAjax({
+			url : url4,
+			method : "post",
+			data : param
+		},callback);
+	
+	function callback(data){
+		window.p1 = data;
+		startTest();
+	}
+	
+	loadAjax({
+			url : url4,
+			method : "post",
+			data : {a:"post"},
+		},function(data){
+			window.p2 = data;
+			startTest();
+		});
+	
+	function startTest(){
+		step += 1;
+		if(step == 5){
+			setUpPageStatus = "complete";
+		}
+	}
+}
+
+function testLoadJsonP(){
+	assertEquals("url1", "1" ,g1);
+	assertEquals("url1", "string" ,typeof g1);
+}
+
+function testLoadJsonP2(){
+	assertEquals("url2", "[1,3,4,5]" ,g2);
+	assertEquals("url2 data type", "string" ,typeof g2);
+}
+
+function testLoadJsonP3(){
+	assertEquals("url3", "{a:1,b:2}" ,g3);
+	assertEquals("url3 data type", "string" ,typeof g3);
+}
+
+function testLoadAjax(){
+	assertEquals("p1", "4" ,p1);	
+	assertEquals("p1 type", "string" ,typeof p1);	
+}
+
+function testLoadAjax2(){
+	assertEquals("p2", "post" ,p2);	
+	assertEquals("p2 type", "string" ,typeof p2);
+}
+</script>
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>

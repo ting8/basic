@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<script language="JavaScript" type="text/javascript" src="../core/app/jsUnitCore.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core_test.js"></script>
+<TITLE>insert</TITLE>
+<script language="JavaScript">
+function setUp(){
+	cssUrl = 'http://scriptsrc.net/css/global.css';
+	jsUrl = 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js';
+}
+function testInsertCSS(){
+	insertCSS(cssUrl,callback);
+	function callback(){
+		var cssDom = HE.$('head link');
+		assertEquals("css number", 1,cssDom.length);
+		assertEquals("insert css", cssUrl,cssDom[0].href);
+	}
+}
+function testInsertJS(){
+	insertJS(jsUrl,function(){
+		var jsDom = HE.$('head script');
+		assertEquals("js length", 4,jsDom.length); 
+		assertEquals("insert js", jsUrl,jsDom[3].src);
+	});
+}
+</script>
+</HEAD>
+<BODY>
+</BODY>
+</HTML>

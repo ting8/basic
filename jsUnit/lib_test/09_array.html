@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<script language="JavaScript" type="text/javascript" src="../core/app/jsUnitCore.js"></script> 
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core_test.js"></script>
+<TITLE>array</TITLE>
+
+<div class="pm_menu">
+	<div class="pm_methods_items" id="pm_methods_items">11111</div>
+</div>
+
+<script language="JavaScript">
+function setUp(){
+	s1 = "aa";
+	s2 = "a";
+	s3 = "b";
+	a1 = [1,2,3,"333","a","b"];
+	a2 = [1,2];
+	d1 = {
+		"1" : "1",
+		"2" : "2",
+		"3" : "3"
+	}
+}
+function testArrayIndexOf(){
+	assertEquals("aa index a", 0,arrayIndexOf(s1,s2)); 
+	assertEquals("aa index b", -1,arrayIndexOf(s1,s3)); 
+	assertEquals("[1,2,3,'333','a','b'] index b", 5,arrayIndexOf(a1,s3)); 
+	assertEquals("[1,2,3,'333','a','b'] index aa", -1,arrayIndexOf(a1,s1));   
+}
+function testArrayMerge(){
+	//assertEquals("a1 merge a2", [1,2,3,"333","a","b"],arrayMerge(a1,a2)); 
+	assertEquals("a1 merge a2", [1,2,3,"333","a","b"].toString(),arrayMerge(a1,a2).toString()); 
+}
+function testArrayFilter(){
+	function filerNum(str){ 
+		return str > 0;
+	}
+	function filerStr(str){ 
+		return typeof str == 'string';
+	}
+	//assertEquals("a1 filter d1", [1,2,3,333],arrayFilter(a1,filerFun)); 
+	assertEquals("a1 filter d1", [1,2,3,333].toString(),arrayFilter(a1,filerNum).toString()); 
+	assertEquals("a1 filter d1", ["333","a","b"].toString(),arrayFilter(a1,filerStr).toString());
+}
+function testArrayKeys(){
+	//assertEquals("d1 keys", [1,2,3],arrayKeys(d1)); 
+	assertEquals("d1 keys", [1,2,3].toString(),arrayKeys(d1).toString()); 
+}
+</script>
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>

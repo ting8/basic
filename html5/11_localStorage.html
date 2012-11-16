@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>localStorage</title>
+<style type="text/css">
+body {padding:20px 100px;}
+div {margin:50px 0;background:#f5f5f5;border:1px solid #ccc; padding:10px; font-size:12px; line-height:25px; font-family:Arial,宋体}
+</style>
+</head>
+
+<body>
+
+<div id="show"></div>  
+
+<input type="text" id="text" value="test" />
+<input type="button" value="save" onclick="save()" /> 
+
+<hr />
+
+<input type="button" value="show" onclick="show()" /> 
+<input type="button" value="clear" onclick="clears()" />
+<br>
+
+
+<script>
+
+//navigator.onLine; 判断是否离线模式
+function myEvt(e) {
+	alert(1)
+}
+
+window.addEventListener("storage",function(e){myEvt(e);},false);
+
+function save(){
+	var obj = document.getElementById("text");
+	var time = new Date().getTime();
+	if(obj.value){
+		localStorage.setItem(time,obj.value);
+		//localStorage[time] = obj.value;
+	}else{
+		alert('请输入内容')
+	}	
+}
+function show(){
+	var obj = document.getElementById("show");
+	var str = "";
+	var len = localStorage.length;
+		str += '共' +len + '个属性：<br />';
+		for(var n=0;n<len;n++){
+			var key = localStorage.key(n)
+			str += key + ' : ' + localStorage.getItem(key) + '<br />';
+		}
+		obj.innerHTML = str;
+}
+function clears(){
+	localStorage.clear();
+	//localStorage.removeItem("keyname");
+}
+
+
+//The order of keys is user-agent defined, but must be consistent within an object so long as the number of keys doesn't change. 
+//adding or removing a key may change the order of the keys
+</script>
+</body>
+</html>

@@ -1,0 +1,283 @@
+﻿<!doctype html>
+<html manifest="sqllite/ms.manifest">
+<head>
+<meta charset="UTF-8" />
+<meta name = "viewport" content = "width = device-width, user-scalable = no">
+<title>演唱会信息</title>
+<style type="text/css">
+* {margin: 0;padding: 0;list-style:none}
+body {font-family: "微软雅黑",Helvetica}
+.hide {display:none;}
+h2{background:#333;color:#eee;font-size:14px;padding:5px 10px;}
+#layout {width:320px; margin:30px auto;border:1px solid #ccc;-webkit-border-radius: 2px; min-height:300px;}
+.toolBar {border-bottom: 1px solid #aaa;padding:10px 5px 10px 10px;height:45px;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#D7D7D7));-webkit-box-sizing:border-box;}
+.toolBar h1 {height: 40px;font-size:20px;color: #333;text-shadow:0 1px 0 rgba(255, 255, 255, 0.8);}
+.page ul li p {color:#222;display:block;border-bottom:1px solid #ddd;padding: 10px 10px 10px 10px; cursor:pointer;}
+#listCont li span {width:10px;height:10px; overflow:hidden;float:right;margin:-35px 5px 0 0; line-height:10px;}
+.button {
+	display: block;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#666), to(#000));
+	padding:6px;border: 1px solid #000;
+	color: #fff;text-decoration: none;
+	font-size: 13px;
+	text-shadow: #000 0 -1px 0;
+	-webkit-box-shadow: rgba(255,255,255, .4) 0 1px 0;
+	-webkit-border-radius: 5px;
+	-webkit-border-image: none;
+	cursor:pointer;
+}
+.spanbtn {float: right;margin:-45px 0 0 0;}
+.formdata {clear:both;margin:5px; font-size:13px;}
+.formdata em { font-style:normal; float:left;}
+#noteTitle,#noteCont { margin-left:40px;border:1px solid #ccc;padding:3px;text-shadow:0 1px 0 rgba(255, 255, 255, 0.8);-webkit-border-radius: 2px;line-height:22px; overflow:auto; display:block;}
+#subNote { margin-left:40px;width:60px; text-align:center}
+#noteTitle {height:25px; }
+#noteCont {height:130px;}
+#noteTitle,#noteCont {font-size:14px;font-family: "微软雅黑",Helvetica}
+#detaPage p{padding:10px;font-size:12px; line-height:22px;}
+</style>
+</head>
+<body>
+
+<div id="layout">
+	<!--note list-->
+	<div class="page" id="listPage">
+		<div class="toolBar">
+			<h1>演唱会信息</h1>
+			<span class="button spanbtn" onClick="userAddNote()">新增</span>
+		</div>
+		<ul id="listCont"></ul>
+	</div>
+
+	<!--add note-->
+	<div class="page hide" id="addPage">
+		<div class="toolBar">
+			<h1>新增演唱会信息</h1>
+			<span class="button spanbtn" onClick="userCloseAdd()">关闭</span>
+		</div>		
+		<div class="formdata"><em>名称：</em><input id="noteTitle" type="text" /></div>
+		<div class="formdata"><em>备注：</em><article name="note" id="noteCont" contenteditable="true"></article></div>
+		<div class="formdata"><span id="subNote" class="button" onClick="addNote()">提交</span></div>
+	</div>
+
+	<!--Details page-->
+	<div class="page hide" id="detaPage">
+		<div class="toolBar">
+			<h1>演唱会详情</h1>
+			<span class="button spanbtn" onClick="userBack()">返回</span>
+		</div>
+		<h2 id="TitleShow" contenteditable="true"></h2>
+		<p id="ContShow" contenteditable="true"></p>
+	</div>
+</div>
+<script type="text/javascript">
+function $(elemID){
+	return document.getElementById(elemID)
+}
+function strReplace(str){ 
+	var t="",len=0; 
+	len=str.split("\\n"); 
+	for(var i=0;i<len.length;i++){ 
+		t=t+len[i]+"<br>   "; 
+	} 
+	return t;
+} 
+//create a database named 'noteDB'
+try {
+	if(!window.openDatabase){
+		alert('not supported!');
+	} else {
+		var shortName = 'Concerts';
+		var version = '1.0';
+		var displayName = 'ConcertsInfo';
+		var maxSize = 65536; //bytes
+		var db = openDatabase(shortName,version,displayName,maxSize);
+	}
+} catch(e){
+	if (e == 2){
+		//alert('Invalid database version.');
+	} else {
+		//alert("Unknown error "+e+".");
+	}
+}
+
+//create tables (if not existe)
+db.transaction(
+	function (transaction){
+		transaction.executeSql('CREATE TABLE IF NOT EXISTS notes (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, titel TEXT, note TEXT NOT NULL, date DATE);',[],nullDataHandler, errorHandler);
+	}
+);
+
+dataLoad();
+$("TitleShow").onblur = function(){
+	updateData(this,'titel');
+}
+$("ContShow").onblur = function(){
+	updateData(this,'note');
+}
+
+//error handler
+function errorHandler(transaction, error){
+	//alert('Oops, Error was: '+ error.message +'(Code:'+ error.code +')');
+	var fatal_error = true;
+	if(fatal_error){
+		return true;
+	}
+	return false;
+}
+
+function dataLoad(){
+	var locationHref = location.href;
+	if (!getHash(locationHref,'act')){
+		getList();
+	}else {
+		var act = getHash(locationHref,'act');
+		if (act == 'add'){
+			userAddNote();
+		}else if(act == 'close'){
+			userCloseAdd();
+			getList();
+		}else if(act == 'back'){
+			userBack();
+		}else{
+			userShowNote(act);
+		}
+	}
+}
+//null data handler
+function nullDataHandler(transaction, results){}
+
+//list note
+function getList(){
+	db.transaction(
+		function (transaction){
+			transaction.executeSql("SELECT * from notes;",[],dataHandler, errorHandler);
+		}
+	);
+}
+
+function dataHandler(transaction, results){
+	var string = "";
+	for (var i = 0; i<results.rows.length; i++){
+		var row = results.rows.item(i);
+		string = [string,'<li><p onclick="userShowNote(this.id)" id="',row['id'],'"',row['id'],'>', row['titel'],'</p><span class="button" onclick="dataDel(this,',row['id'],')">X</span></li>'].join("");
+	}
+	var listConts = $('listCont');
+	listConts.innerHTML = string;
+}
+
+function dataDel(obj,id){
+	obj.parentNode.className += "hide";
+	db.transaction(
+		function (transaction){
+			transaction.executeSql('delete from notes where id='+id+';',[],nullDataHandler,errorHandler);
+		}
+	);
+}
+//insert data;
+function addNote(){
+	var noteTit = $('noteTitle').value;
+	if (noteTit == ""){
+		$('noteTitle').focus();
+		return false;
+	}
+	var noteCont = $('noteCont').innerHTML;
+	var date = new Date();
+	db.transaction(
+		function (transaction){
+			transaction.executeSql('INSERT INTO notes (titel,note,date) VALUES ("'+noteTit+'","'+noteCont+'","'+date+'");',[],nullDataHandler,errorHandler);
+			transaction.executeSql("SELECT * from notes;",[],dataHandler, errorHandler);
+		}
+	);
+	userCloseAdd();
+}
+
+//user action 
+function userAddNote(){
+	$('noteTitle').value = "";
+	$('noteCont').innerHTML = "";
+	$("listPage").style.display="none";
+	$("addPage").style.display="block";
+	writeHash("act","add");
+}
+function userCloseAdd(){
+	$("listPage").style.display="block";
+	$("addPage").style.display="none";
+	writeHash("act","close");
+}
+function userBack(){
+	$("listPage").style.display="block";
+	$("detaPage").style.display="none";
+	writeHash("act","back");
+	getList();
+}
+//note deta
+function userShowNote(nid){
+	writeHash("act",nid);
+	$("listPage").style.display="none";
+	$("detaPage").style.display="block";
+	db.transaction(
+		function (transaction){
+			transaction.executeSql("SELECT * from notes WHERE id="+nid+";",[],detaHandler, errorHandler);
+		}
+	);
+}
+function detaHandler(transaction, results){
+	var noteTit = $("TitleShow");
+	var noteCont = $("ContShow");
+
+	for (var i = 0; i<results.rows.length; i++){
+		var row = results.rows.item(i);
+		
+		noteTit.innerHTML = row['titel'];
+		noteTit.lang = row['id'];
+		noteCont.innerHTML = row['note'];
+		noteCont.lang = row['id'];
+	}
+	return false;
+}
+function updateData(obj,type){
+	var nid = obj.lang;
+	var value = obj.innerHTML;
+	db.transaction(
+		function (transaction){
+			transaction.executeSql("update notes set "+type+"='"+ value +"' WHERE id="+nid+";",[],nullDataHandler, errorHandler);
+		}
+	);
+}
+
+function getHash(str,para){
+	var result = "",ParaStr;
+	if(str.indexOf("#!")>-1){
+		ParaStr = str.split("#!")[1];
+	}else if(str.indexOf("?")>-1){
+		ParaStr = str.split("?")[1];
+	}else{
+		return false;
+	}
+	var ParaArr = ParaStr.split("&");
+	var len = ParaArr.length;
+	for (var n=0;n<len;n++){
+		if (ParaArr[n].indexOf(para)>-1){
+			result = ParaArr[n].replace(para + "=","") 
+		}
+	}
+	return result;
+}
+function writeHash(prop,value){
+	var address = location.hash;
+	if (address.indexOf("#!")>-1){
+		var v = getHash(address,prop);
+		if(v){
+			location.hash = address.replace(prop+"="+v,prop+"="+value);
+		}else{
+			var hash = '&' + prop +'=' + value;
+			location.hash += hash;
+		}
+	}else{
+		location.hash = "#!" + prop + '=' +value;	
+	}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<script language="JavaScript" type="text/javascript" src="../core/app/jsUnitCore.js"></script> 
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core_test.js"></script>
+<TITLE>class</TITLE>
+
+<div class="pm_menu">
+	<div class="pm_methods_items" id="pm_methods_items">11111</div>
+</div>
+
+<script language="JavaScript">
+var div;
+function setUp(){
+	div = NE.$("#pm_methods_items");
+}
+function testHasClass(){
+	assertEquals("div has pm_methods_items", true,hasClass(div,'pm_methods_items')); 
+	assertEquals("div has pm_methods", false,hasClass(div,'pm_methods')); 
+}
+function testAddClass(){
+	addClass(div,'pm_methods');
+	addClass(div,'pm_methods_test');
+	assertEquals("div has pm_methods", true,hasClass(div,'pm_methods')); 
+	assertEquals("div has pm_methods_test", true,hasClass(div,'pm_methods_test'));
+}
+function testRemoveClass(){
+	removeClass(div,'pm_methods');
+	assertEquals("div has pm_methods", false,hasClass(div,'pm_methods')); 
+	assertEquals("div has pm_methods_test", true,hasClass(div,'pm_methods_test'));
+	
+	removeClass(div,'pm_methods_test');
+	assertEquals("div has pm_methods_test", false,hasClass(div,'pm_methods_test'));
+	assertEquals("div has pm_methods_items", true,hasClass(div,'pm_methods_items'));
+	
+	removeClass(div,'pm_methods_items');
+	assertEquals("div has pm_methods_items", false,hasClass(div,'pm_methods_items'));
+}
+</script>
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>

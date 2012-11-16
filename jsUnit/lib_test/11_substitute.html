@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<script language="JavaScript" type="text/javascript" src="../core/app/jsUnitCore.js"></script> 
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core_test.js"></script>
+<TITLE>substitute</TITLE>
+<script language="JavaScript">
+function setUp(){
+	temp1 = '<a href="{link}" class="{_class}" title="{title}">{text}</a>';
+	data1 = {'link':'http://happyelements.com','_class':'logo','title':'back to homepage','text':'happyelements'};
+	data2 = [{'link':'http://happyelements.com','_class':'logo','title':'back to homepage','text':'happyelements'},{'link':'http://happyelements.com','_class':'logo','title':'back to homepage','text':'happyelements'}];
+	html1 = '<a href="http://happyelements.com" class="logo" title="back to homepage">happyelements</a>';
+	html2 = '<a href="http://happyelements.com" class="logo" title="back to homepage">happyelements</a><a href="http://happyelements.com" class="logo" title="back to homepage">happyelements</a>';
+}
+function testSubstitute(){
+	assertEquals("temp data", html1,substitute(temp1,data1)); 
+	assertEquals("temp data", html2,substitute(temp1,data2)); 
+}
+</script>
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<script language="JavaScript" type="text/javascript" src="../core/app/jsUnitCore.js"></script> 
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core_test.js"></script>
+<TITLE>trim</TITLE>
+
+<div class="pm_menu">
+	<div class="pm_methods_items" id="pm_methods_items">11111</div>
+</div>
+
+<script language="JavaScript">
+function setUp(){
+	var str = " 1 2 3 4 ";
+	data = trim(str);
+}
+function testTrim(){
+	assertEquals("left", '1 2 3 4 ',data['left']); 
+	assertEquals("right", ' 1 2 3 4',data['right']);
+	assertEquals("both", '1 2 3 4',data['both']);  
+	assertEquals("all", '1234',data['all']); 
+}
+</script>
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>

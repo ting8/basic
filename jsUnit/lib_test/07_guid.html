@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<script language="JavaScript" type="text/javascript" src="../core/app/jsUnitCore.js"></script> 
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core_test.js"></script>
+<TITLE>guid</TITLE>
+<script language="JavaScript">
+function setUp(){
+	a = [],len = 50;
+	for(i=0;i<len;i++){
+		a[i] = guid();
+	}
+	n1 = (Math.floor(Math.random() * len) + 1);
+	n2 = (Math.floor(Math.random() * len) + 1);
+}
+function testGuid(){
+	assertEquals("a length", len,a.length); 
+	assertEquals("type", 'string',typeof a[n1]);
+	assertEquals("type", 'string',typeof a[n2]);
+	assertEquals("frist is n", 0,a[n1].indexOf('n'));
+	assertEquals("frist is n", 0,a[n2].indexOf('n'));
+	assertEquals("n1 == n2", false,a[n1] == a[n2]);
+}
+</script>
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>

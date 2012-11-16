@@ -1,0 +1,8 @@
+HTML:
+<http://www.w3.org/TR/1999/NOTE-html40-mobile-19990315/NOTE-html40-mobile.html>
+A plain text file:
+<http://www.w3.org/TR/1999/NOTE-html40-mobile-19990315/NOTE-html40-mobile.txt>
+HTML as a gzip'ed tar file, including accompanying resources:
+<http://www.w3.org/TR/1999/NOTE-html40-mobile-19990315/NOTE-html40-mobile.tgz>
+HTML as a zip file, including accompanying resources:
+<http://www.w3.org/TR/1999/NOTE-html40-mobile-19990315/NOTE-html40-mobile.zip>

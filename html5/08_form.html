@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<HTML lang="en">
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<TITLE>form</TITLE>
+</HEAD>
+<style type="text/css">
+* {font-size:12px;}
+p {clear:both;}
+label {text-align:right;float:left;width:120px;line-height:20px;padding-right:10px;}
+.submit {font-size:14px;background:#333;color:#fff;padding:5px 10px;border:0;border-radius:3px;}
+</style>
+<BODY>
+
+
+   <form action="" enctype="application/x-www-form+xml" method="post">
+		<p>
+			<label for="name">ID(Email格式)</label>
+			<input name="name" required="true" type="email" placeholder="点击我会以清除" />
+		</p>
+		<p>
+			<label for="password">密码</label>
+			<input name="password" required="true" type="password" />
+		</p>
+		<p>
+			<label for="birthday">出生日期</label>
+			<input type="date" name="birthday" />
+		</p>
+		<p>
+			<label>国籍</label>
+			<input type="text" list="ilist"> 
+			<datalist id="ilist"> 
+			    <option label="ab" value="ab"></option>
+				<option label="bb" value="bb"></option>
+				<option label="cb" value="cb"></option>
+			</datalist> 
+		</p>
+		<p>
+			<label>年龄</label>
+			<input type="range" value="50" />
+		</p>
+		<p>
+			<label>选取颜色</label>
+			<input type="color" value="#34538b" />
+		</p>
+		<p>
+			<label for="photo">个性头像</label>
+			<input type="file" name="photo" accept="image/*" />
+		</p>
+		<p>
+			<label for="submit">&nbsp; </label>
+			<input type="submit" value="send" class="submit" />
+		</p>
+	</form>
+
+	
+<script type="text/javascript">
+	window.addEventListener("invalid",function(e){
+		console.log(e)
+		console.log(e.target)
+	},true);
+</script>
+</BODY></HTML>

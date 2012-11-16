@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>txt Reader</title> 
+ 
+<STYLE TYPE="text/css"> 
+* { margin:0; padding:0;}
+body { background:#fff;color:#333; font-size:12px; line-height:20px;}
+.oprators {margin:20px 20px 0;}
+.reader {border:1px solid #d6d6d6; background:#f5f5f5;width:650px; margin:0 20px;min-height:400px;position:relative;}
+h1,#pages {font-size:14px;padding:5px; text-align:center;background:#d6d6d6;}
+input { margin:10px;}
+#content { padding:20px; height:400px; overflow:auto;white-space: pre-wrap;}
+#pages span {margin:0 10px;}
+</style> 
+
+ 
+</head> 
+ 
+<body> 
+<div class="oprators">
+	<input type="file" id="input" onChange="itemSelected(this.files)" value="导入txt文件" accept="txt/*"  />
+</div>
+<div class="reader" id="reader" ondragenter="return false" ondragover="return false" ondrop="dropIt(event)">
+</div>
+
+<script>
+var obj = document.getElementById('reader'); 
+function dropIt(e) {  
+   itemSelected(e.dataTransfer.files); 
+   e.stopPropagation();  
+   e.preventDefault();   
+} 
+function itemSelected(myFiles) {
+  for (var i = 0, f; f = myFiles[i]; i++) {
+    var imageReader = new FileReader();
+    imageReader.onload = (function(aFile) {
+		return function(e) {
+			var titleArr = aFile.name.split(".");
+			var title = document.createElement('h1');
+				title.innerHTML = aFile.name.replace('.'+titleArr[titleArr.length-1],'');
+			var cont = document.createElement('pre');
+				cont.id = 'content';
+				cont.innerHTML = e.target.result;
+			var page = document.createElement('div');
+				page.id = 'pages';
+			obj.innerHTML = "";	
+			obj.appendChild(title);
+			obj.appendChild(cont);
+			obj.appendChild(page);
+			obj.style.display = "block";
+			localStorage.setItem("books",obj.innerHTML);
+			pages();
+		};
+    })(f);
+    imageReader.readAsText(f,['gb2312']);
+  }
+} 
+function pages(){
+	var cont = document.getElementById('content');
+	var pages = document.getElementById('pages');
+	cont.onscroll = pagesCount;
+	pagesCount();
+	function pagesCount(){
+		var h1 = cont.clientHeight;
+		var h2 = cont.scrollTop;
+		var h3 = cont.scrollHeight;
+		var pagec = Math.ceil(h3/h1);
+		var pagen = Math.ceil(h2/h1);
+		var pt = Math.floor(100*h2/h3) + '%';
+		pages.innerHTML = ['<span>' , pt , '</span><span>' , pagen , '/' , pagec , '</span>'].join('');
+	}
+}
+window.onload = function(){ 
+	var html = localStorage.getItem("books");
+	if(html){
+		obj.innerHTML = html;
+		obj.style.display = "block";
+		pages();
+	}
+}
+</script> 
+</body> 
+</html>

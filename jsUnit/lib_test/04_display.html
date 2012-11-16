@@ -1,0 +1,30 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<script language="JavaScript" type="text/javascript" src="../core/app/jsUnitCore.js"></script> 
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core_test.js"></script>
+<TITLE>show/hide</TITLE>
+
+<div class="pm_menu">
+	<div class="pm_methods_items" id="pm_methods_items">11111</div>
+</div>
+
+<script language="JavaScript">
+function setUp(){
+	div = NE.$("#pm_methods_items");
+}
+function testShow(){
+	hide(div);
+	assertEquals("div`s none", 'none',div.style.display);
+	show(div);	
+	assertEquals("div`s block", 'block',div.style.display); 
+	hide('#pm_methods_items');
+	assertEquals("div`s none", 'none',div.style.display); 
+}
+</script>
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>

@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<head>
+<title>contenteditable</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+	body {text-align:center;}
+	.wrap {font-size:14px;font-family:arial;border:1px solid #ccc;padding:10px;margin:50px;text-align:left;}
+</style>
+</head>
+<body>
+<div class="wrap" id="wrap" contenteditable="true">
+	When two or more margins collapse, the resulting margin width is the maximum of the collapsing margins' widths. In the case of negative margins, the maximum of the absolute values of the negative adjoining margins is deducted from the maximum of the positive adjoining margins. If there are no positive margins, the maximum of the absolute values of the adjoining margins is deducted from zero.
+
+	If the top and bottom margins of a box are adjoining, then it is possible for margins to collapse through it. In this case, the position of the element depends on its relationship with the other elements whose margins are being collapsed.
+</div>
+<input type="submit" onclick="getText()" text="getText" />
+
+<script type="text/javascript" src="res/lib.js"></script>
+<script type="text/javascript">
+	function getText(){
+		var obj = HE.$('#wrap');
+		alert(obj.innerHTML);
+	}
+</script>
+</body>
+</html>

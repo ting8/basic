@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE> lib test </TITLE>
+<script language="JavaScript" type="text/javascript" src="../core/app/jsUnitCore.js"></script> 
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core_test.js"></script>
+<script language="JavaScript" type="text/javascript">
+	function SuiteGetBroswer() {
+		var result = new top.jsUnitTestSuite();
+		result.addTestPage("../lib_test/01_broswer.html");
+		return result;
+	}
+	
+	function SuiteGetObj() {
+		var result = new top.jsUnitTestSuite();
+		result.addTestPage("../lib_test/02_$.html");
+		return result;
+	}
+	
+	function SuiteProp() {
+		var result = new top.jsUnitTestSuite();
+		result.addTestPage("../lib_test/03_prop.html");
+		return result;
+	}
+	
+	function SuiteDisplay() {
+		var result = new top.jsUnitTestSuite();
+		result.addTestPage("../lib_test/04_display.html");
+		return result;
+	}	
+
+	function SuiteClass() {
+		var result = new top.jsUnitTestSuite();
+		result.addTestPage("../lib_test/05_class.html");
+		return result;
+	}	
+	
+	function SuiteCode() {
+		var result = new top.jsUnitTestSuite();
+		result.addTestPage("../lib_test/06_decode.html");
+		return result;
+	}	
+	
+	function SuiteGuid() {
+		var result = new top.jsUnitTestSuite();
+		result.addTestPage("../lib_test/07_guid.html");
+		return result;
+	}	
+	
+	function SuiteTrim() {
+		var result = new top.jsUnitTestSuite();
+		result.addTestPage("../lib_test/08_trim.html");
+		return result;
+	}	
+	
+	function SuiteArray() {
+		var result = new top.jsUnitTestSuite();
+		result.addTestPage("../lib_test/09_array.html");
+		return result;
+	}	
+	
+	function SuiteHash() {
+		var result = new top.jsUnitTestSuite();
+		result.addTestPage("../lib_test/10_hash.html");
+		return result;
+	}
+	
+	function SuiteSubstitute() {
+		var result = new top.jsUnitTestSuite();
+		result.addTestPage("../lib_test/11_substitute.html");
+		return result;
+	}
+	
+	function SuiteInsert() {
+		var result = new top.jsUnitTestSuite();
+		result.addTestPage("../lib_test/12_insert.html");
+		return result;
+	}
+	
+	function SuiteAjax() {
+		var result = new top.jsUnitTestSuite();
+		result.addTestPage("../lib_test/14_ajax.html");
+		return result;
+	}
+	
+	function suite() {
+		var newsuite = new top.jsUnitTestSuite();
+		newsuite.addTestSuite(SuiteGetBroswer());
+		newsuite.addTestSuite(SuiteGetObj());
+		newsuite.addTestSuite(SuiteProp());
+		newsuite.addTestSuite(SuiteDisplay());
+		newsuite.addTestSuite(SuiteClass());
+		newsuite.addTestSuite(SuiteCode());
+		newsuite.addTestSuite(SuiteGuid());
+		newsuite.addTestSuite(SuiteTrim());
+		newsuite.addTestSuite(SuiteArray());
+		newsuite.addTestSuite(SuiteHash());
+		newsuite.addTestSuite(SuiteSubstitute());
+		newsuite.addTestSuite(SuiteInsert());
+		newsuite.addTestSuite(SuiteAjax());
+		
+		return newsuite;
+	}
+</script> 
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>

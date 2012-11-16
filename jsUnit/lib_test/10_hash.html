@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<script language="JavaScript" type="text/javascript" src="../core/app/jsUnitCore.js"></script> 
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core_test.js"></script>
+<TITLE>para/hash</TITLE>
+<script language="JavaScript">
+function setUp(){
+	url = 'fb_sig_in_iframe=1&fb_sig_base_domain=happyelements.com&fb_sig_locale=zh_CN&fb_sig_in_new_facebook=1&fb_sig_time=1291601334.3024&fb_sig_added=1&fb_sig_profile_update_time=1289181247&fb_sig_expires=1291608000&fb_sig_user=1819516730&fb_sig_session_key=2.DnTgomu8UGCR5aELhL0BVg__.3600.1291608000-1819516730&fb_sig_ss=KgtdPVCSKnZVaWSK0LoiQw__&fb_sig_cookie_sig=3e2fe3ec84bb4ca842cbb72a95cad289&fb_sig_ext_perms=email&fb_sig_country=kr&fb_sig_api_key=d4dfcb32e7b388ec091af5b989502490&fb_sig_app_id=166394616716486&fb_sig=39a84b81e8f1ceeeec6fd47654fdec1b';
+	
+	url2 = "http://www.love.com/?page=1"
+}
+function testGetPara(){
+	assertEquals("url.fb_sig_time", '1291601334.3024',getPara(url,'fb_sig_time')); 
+	assertEquals("url.page", "1",getPara(url2,'page')); 
+	assertEquals("url.fb_sig_base_domain", 'happyelements.com',getPara(url,'fb_sig_base_domain'));
+	
+	assertEquals("url.test", '',getPara(url,'test'));
+}
+
+function testSetPara(){
+	url = setPara(url,'test','test')
+	assertEquals("url.test", 'test',getPara(url,'test','test'));
+	
+	assertEquals("url.fb_sig_time", '1291601334.3024',getPara(url,'fb_sig_time')); 
+	assertEquals("url.fb_sig_base_domain", 'happyelements.com',getPara(url,'fb_sig_base_domain'));
+}
+
+function testSetHash(){
+	setHash('test','test');
+	assertEquals("hash set test", 'test',getHash('test'));
+	assertEquals("hash set test2", '',getHash('test2'));
+	
+	
+	setHash('test2','test2');
+	assertEquals("hash get test", 'test',getHash('test'));
+	assertEquals("hash get test2", 'test2',getHash('test2'));
+}
+</script>
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>

@@ -1,0 +1,23 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<script language="JavaScript" type="text/javascript" src="../core/app/jsUnitCore.js"></script> 
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core.js"></script>
+<script language="JavaScript" type="text/javascript" src="http://dev.f2e.netease.com/lib/core_test.js"></script>
+<TITLE>get broswer</TITLE>
+<script language="JavaScript">
+function testGetBroswer(){
+	assertEquals("current broswer is chrome", false, isBroswer('chrome'));  
+	assertEquals("current broswer is firefox", false, isBroswer('firefox'));   
+	assertEquals("current broswer is safari", false, isBroswer('safari'));    
+	assertEquals("current broswer is opera", false, isBroswer('opera'));  
+	assertEquals("current broswer is msie", false, isBroswer('ie'));  
+	assertEquals("current broswer is webkit", true, isBroswer('webkit'));  
+	assertEquals("current broswer is is64", false, isBroswer('is64'));  
+}
+</script>
+</HEAD>
+
+<BODY>
+</BODY>
+</HTML>
