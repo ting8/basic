@@ -39,9 +39,11 @@ function itemSelected(myFiles) {
 		return function(e) {
 			var titleArr = aFile.name.split(".");
 			var title = document.createElement('h1');
-				document.title = title;
-				localStorage.setItem("title",title);
 				title.innerHTML = aFile.name.replace('.'+titleArr[titleArr.length-1],'');
+
+				document.title = title.innerHTML;
+				localStorage.setItem("title",title.innerHTML);
+
 			var cont = document.createElement('pre');
 				cont.id = 'content';
 				cont.innerHTML = e.target.result;
