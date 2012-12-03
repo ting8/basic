@@ -1,0 +1,14 @@
+<mockup version="1.0" skin="sketch" measuredW="912" measuredH="153" mockupW="668" mockupH="70">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BreadCrumbs" x="244" y="83" w="-1" h="-1" measuredW="641" measuredH="23" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u7F51%u6613%u9996%u9875%2C%u65B0%u95FB%2C%u4F53%u80B2%2CNBA%2C%u5A31%u4E50%2C%u8D22%u7ECF%2C%u80A1%u7968%2C%u6C7D%u8F66%2C%u79D1%u6280%2C%u624B%u673A%2C%u5973%u4EBA%2C%u8BBA%u575B%2C%u89C6%u9891%2C</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::LinkBar" x="244" y="130" w="-1" h="-1" measuredW="668" measuredH="23" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%u7F51%u6613%u9996%u9875%2C%u65B0%u95FB%2C%u4F53%u80B2%2CNBA%2C%u5A31%u4E50%2C%u8D22%u7ECF%2C%u80A1%u7968%2C%u6C7D%u8F66%2C%u79D1%u6280%2C%u624B%u673A%2C%u5973%u4EBA%2C%u8BBA%u575B%2C%u89C6%u9891</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

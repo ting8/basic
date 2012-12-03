@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC  "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+<TITLE>css3 animation</TITLE>
+</HEAD>
+<BODY>
+
+<script type="text/javascript">
+var contents = {
+	border : {
+		"border-radius":''
+	}£¬
+	shadow : {
+		"box-shadow":'',
+		"text-shadow":''
+	},
+	color : {
+		"HSL colors":'', 
+		"HSLA colors":'',
+		"RGBA colors":'' 
+	},
+	transform : {
+		"rotate":'X/Y/Z',
+		"scale":'',
+		"translate":'transform-origin,transition-property,transition-duration,transition-timing-function,transition-delay',
+		"skew":'',
+		"matrix":''
+	},
+	animation : {
+		"animation-name":'',
+		"animation-duration":'',
+		"animation-timing-function":'',
+		"animation-delay":'',
+		"animation-iteration-count":'',
+		"-webkit-animation-direction":''
+};
+</script>
+
+<style type="text/css">
+#rotate2 {
+	margin: 20px auto;
+	width: 200px;
+	height: 100px;
+	border:1px solid #cd0000;
+}
+
+#rotate2:hover{
+	background-color:blue;
+	width:100px;
+	height:50px;
+	-webkit-transform: rotate(90deg);	
+	-webkit-transition-property:background-color -webkit-transform width height;
+	-webkit-transition-duration:2s;
+	transition-timing-function:ease-out
+}
+
+
+#rotate {
+	margin: 0 auto;
+	width: 200px;
+	height: 100px; 
+	-webkit-transform-style: preserve-3d;
+	-webkit-animation-name: x-spin,y-spin;
+	-webkit-animation-duration: 7s;
+	-webkit-animation-iteration-count: 3;
+	-webkit-animation-timing-function: linear;
+	border:1px solid #cd0000; 
+}
+@-webkit-keyframes x-spin { 
+	0% {-webkit-transform: rotateX(0deg)} 
+	50% {-webkit-transform: rotateX(180deg)}
+	100% {-webkit-transform: rotateX(360deg)} 
+}
+@-webkit-keyframes y-spin { 
+	0% {background-color:skyblue;} 
+	25% {background-color:blue;}
+	50% {background-color:green;} 
+	75% {background-color:yellow;} 
+	100% {background-color:red;} 
+}
+</style>
+<div id="rotate">rotate</div>
+<div id="rotate2">rotate2</div>
+
+
+
+</BODY>
+</HTML>

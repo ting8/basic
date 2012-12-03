@@ -1,0 +1,108 @@
+<mockup version="1.0" skin="sketch" measuredW="1021" measuredH="413" mockupW="757" mockupH="319">
+  <controls>
+    <control controlID="4" controlTypeID="__group__" x="264" y="94" w="362" h="152" measuredW="362" measuredH="152" zOrder="0" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="-1" h="-1" measuredW="160" measuredH="120" zOrder="0" locked="false" isInGroup="4">
+          <controlProperties>
+            <src>http%3A//img1.cache.netease.com/sports/2012/11/15/2012111501090692ea1.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Link" x="0" y="129" w="-1" h="-1" measuredW="169" measuredH="23" zOrder="1" locked="false" isInGroup="4">
+          <controlProperties>
+            <text>%u7B2C618%u671F%uFF1A%u9093%u80AF%u8FD9%u4E2A%u201C%u5927%u9A97%u5B50%u201D</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Image" x="202" y="0" w="-1" h="-1" measuredW="160" measuredH="120" zOrder="2" locked="false" isInGroup="4">
+          <controlProperties>
+            <src>http%3A//img5.cache.netease.com/sports/2012/11/14/2012111401165252ca0.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Link" x="202" y="128" w="-1" h="-1" measuredW="158" measuredH="23" zOrder="3" locked="false" isInGroup="4">
+          <controlProperties>
+            <text>%u8D35%u5DDE%u4EBA%u548C%2C%u4E2D%u8D85%u7684%u201C%u5730%u4E0B%u5E1D%u56FD</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="5" controlTypeID="__group__" x="659" y="94" w="362" h="152" measuredW="362" measuredH="152" zOrder="1" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="-1" h="-1" measuredW="160" measuredH="120" zOrder="0" locked="false" isInGroup="5">
+          <controlProperties>
+            <src>http%3A//img1.cache.netease.com/sports/2012/11/15/2012111501090692ea1.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Link" x="0" y="129" w="-1" h="-1" measuredW="169" measuredH="23" zOrder="1" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>%u7B2C618%u671F%uFF1A%u9093%u80AF%u8FD9%u4E2A%u201C%u5927%u9A97%u5B50%u201D</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Image" x="202" y="0" w="-1" h="-1" measuredW="160" measuredH="120" zOrder="2" locked="false" isInGroup="5">
+          <controlProperties>
+            <src>http%3A//img5.cache.netease.com/sports/2012/11/14/2012111401165252ca0.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Link" x="202" y="128" w="-1" h="-1" measuredW="158" measuredH="23" zOrder="3" locked="false" isInGroup="5">
+          <controlProperties>
+            <text>%u8D35%u5DDE%u4EBA%u548C%2C%u4E2D%u8D85%u7684%u201C%u5730%u4E0B%u5E1D%u56FD</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="6" controlTypeID="__group__" x="264" y="261" w="362" h="152" measuredW="362" measuredH="152" zOrder="2" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="-1" h="-1" measuredW="160" measuredH="120" zOrder="0" locked="false" isInGroup="6">
+          <controlProperties>
+            <src>http%3A//img1.cache.netease.com/sports/2012/11/15/2012111501090692ea1.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Link" x="0" y="129" w="-1" h="-1" measuredW="169" measuredH="23" zOrder="1" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>%u7B2C618%u671F%uFF1A%u9093%u80AF%u8FD9%u4E2A%u201C%u5927%u9A97%u5B50%u201D</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Image" x="202" y="0" w="-1" h="-1" measuredW="160" measuredH="120" zOrder="2" locked="false" isInGroup="6">
+          <controlProperties>
+            <src>http%3A//img5.cache.netease.com/sports/2012/11/14/2012111401165252ca0.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Link" x="202" y="128" w="-1" h="-1" measuredW="158" measuredH="23" zOrder="3" locked="false" isInGroup="6">
+          <controlProperties>
+            <text>%u8D35%u5DDE%u4EBA%u548C%2C%u4E2D%u8D85%u7684%u201C%u5730%u4E0B%u5E1D%u56FD</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="7" controlTypeID="__group__" x="659" y="261" w="362" h="152" measuredW="362" measuredH="152" zOrder="3" locked="false" isInGroup="-1">
+      <groupChildrenDescriptors>
+        <control controlID="0" controlTypeID="com.balsamiq.mockups::Image" x="0" y="0" w="-1" h="-1" measuredW="160" measuredH="120" zOrder="0" locked="false" isInGroup="7">
+          <controlProperties>
+            <src>http%3A//img1.cache.netease.com/sports/2012/11/15/2012111501090692ea1.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="1" controlTypeID="com.balsamiq.mockups::Link" x="0" y="129" w="-1" h="-1" measuredW="169" measuredH="23" zOrder="1" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>%u7B2C618%u671F%uFF1A%u9093%u80AF%u8FD9%u4E2A%u201C%u5927%u9A97%u5B50%u201D</text>
+          </controlProperties>
+        </control>
+        <control controlID="2" controlTypeID="com.balsamiq.mockups::Image" x="202" y="0" w="-1" h="-1" measuredW="160" measuredH="120" zOrder="2" locked="false" isInGroup="7">
+          <controlProperties>
+            <src>http%3A//img5.cache.netease.com/sports/2012/11/14/2012111401165252ca0.png</src>
+            <text/>
+          </controlProperties>
+        </control>
+        <control controlID="3" controlTypeID="com.balsamiq.mockups::Link" x="202" y="128" w="-1" h="-1" measuredW="158" measuredH="23" zOrder="3" locked="false" isInGroup="7">
+          <controlProperties>
+            <text>%u8D35%u5DDE%u4EBA%u548C%2C%u4E2D%u8D85%u7684%u201C%u5730%u4E0B%u5E1D%u56FD</text>
+          </controlProperties>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+</mockup>
