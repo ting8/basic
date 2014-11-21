@@ -17,6 +17,17 @@ body { background:#d4dddc url(images/bg.jpg) no-repeat center 0;}
 .common_hx span { float:right; margin:-35px 15px 0 0; cursor:pointer;}
 
 .common_cloms_mod { background:#fff;}
+#banner{
+	width:960px;
+	height:220px;
+}
+#banner_upload{
+	width:960px;
+	height:220px;
+	opacity:0;
+	margin-top:-220px;
+	display:block;
+}
 .common_wrap .common_cloms_mod {min-height:100px; margin-left:10px;}
 .green_list .common_newslist_top1 {float:left;width:450px;margin:10px;}
 

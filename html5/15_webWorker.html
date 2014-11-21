@@ -20,7 +20,7 @@ button {border:1px solid #ccc;border-radius:3px;padding:5px 10px;background:#333
 var title = "webWorker";
 	document.title = title;
 (function(){
-	var worker = new Worker("echo.js");
+	var worker = new Worker("res/echo.js");
 		worker.addEventListener("message",function(e){HE.trace(e.data)},true);
 		worker.addEventListener("error",function(e){HE.trace(e.data)},true);
 	

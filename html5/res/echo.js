@@ -1,5 +1,5 @@
 addEventListener("message",function(e){
-	setTimeout(function(){
-		postMessage("workers say: John is away.");
-	},2000)
+	setInterval(function(){
+		postMessage(new Date().getTime() + "  workers say: John is away.");
+	},1000)
 },true);
